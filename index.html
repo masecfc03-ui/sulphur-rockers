@@ -582,6 +582,122 @@
     border-left: 3px solid var(--oak);
   }
 
+  /* ── CHAIR STYLES ───────────────────── */
+  .styles-section {
+    background: var(--warm-white);
+    padding: 100px 80px;
+  }
+  .styles-section .section-title { margin-bottom: 12px; }
+  .styles-section .section-sub { margin-bottom: 56px; max-width: 580px; }
+
+  .styles-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    max-width: 1060px;
+  }
+
+  .style-card {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 48px;
+    align-items: center;
+    background: white;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+  }
+
+  .style-card-right {
+    grid-template-columns: 1fr 280px;
+  }
+
+  .style-svg-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--cream);
+    border-radius: 8px;
+    padding: 24px;
+  }
+
+  .style-svg { width: 100%; max-width: 220px; height: auto; }
+
+  .style-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--bark);
+    margin-bottom: 4px;
+  }
+
+  .style-tag {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--oak);
+    margin-bottom: 16px;
+  }
+
+  .style-desc {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    border-left: 3px solid rgba(181,131,42,0.3);
+    padding-left: 16px;
+  }
+
+  .style-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .style-features li {
+    font-size: 13px;
+    color: var(--text-muted);
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .style-features li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--oak);
+    font-weight: 700;
+  }
+
+  .styles-note {
+    margin-top: 32px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    background: rgba(181,131,42,0.07);
+    padding: 20px 24px;
+    border-radius: 6px;
+    border-left: 3px solid var(--oak);
+    max-width: 860px;
+  }
+
+  .styles-note span { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+  .styles-note div { color: var(--bark); font-weight: 500; }
+
+  @media (max-width: 900px) {
+    .styles-section { padding: 72px 24px; }
+    .style-card { grid-template-columns: 1fr; gap: 24px; }
+    .style-card-right { grid-template-columns: 1fr; }
+    .style-card-right .style-info { order: 1; }
+    .style-card-right .style-svg-wrap { order: 2; }
+  }
+
   /* ── SETS SECTION ───────────────────── */
   .sets-section {
     background: var(--cream);
@@ -1379,9 +1495,9 @@
   <a href="#" class="nav-logo">Sulphur <span>Rocker</span></a>
   <ul class="nav-links">
     <li><a href="#story">Our Story</a></li>
+    <li><a href="#styles">Chair Styles</a></li>
     <li><a href="#sets">Commission</a></li>
     <li><a href="#schematics">Specs</a></li>
-    <li><a href="#reviews">Reviews</a></li>
     <li><a href="#sets" class="nav-cta">Inquire</a></li>
   </ul>
 </nav>
@@ -1456,6 +1572,111 @@
   </div>
 </section>
 
+<!-- CHAIR STYLES -->
+<section class="styles-section" id="styles">
+  <div class="section-label">Two Templates. One Standard.</div>
+  <h2 class="section-title">Tell us how you want to sit.</h2>
+  <p class="section-sub">Both styles are built the same way — solid wood, hand-stained, matched sets. The difference is in the seat and back profile. We'll talk through which is right for your space and how you use them.</p>
+
+  <div class="styles-grid">
+    <div class="style-card" id="style-flat">
+      <div class="style-svg-wrap">
+        <!-- Flat Seat Side Profile SVG -->
+        <svg viewBox="0 0 260 300" xmlns="http://www.w3.org/2000/svg" class="style-svg">
+          <!-- Rocker -->
+          <path d="M18 268 Q70 285 140 280 Q195 275 242 262" stroke="#5a3a10" stroke-width="7" fill="none" stroke-linecap="round"/>
+          <!-- Back leg -->
+          <line x1="52" y1="265" x2="66" y2="120" stroke="#5a3a10" stroke-width="11" stroke-linecap="round"/>
+          <!-- Front leg -->
+          <rect x="140" y="218" width="22" height="50" rx="2" fill="#b07840" stroke="#5a3a10" stroke-width="2"/>
+          <!-- FLAT seat slats — perfectly horizontal -->
+          <rect x="64" y="200" width="100" height="10" rx="2" fill="#c8955a" stroke="#5a3a10" stroke-width="1.5"/>
+          <rect x="64" y="214" width="100" height="10" rx="2" fill="#c8955a" stroke="#5a3a10" stroke-width="1.5"/>
+          <!-- Armrest — flat, wide -->
+          <rect x="52" y="175" width="100" height="13" rx="5" fill="#c8955a" stroke="#5a3a10" stroke-width="2.5"/>
+          <!-- Arm support -->
+          <rect x="140" y="188" width="18" height="24" rx="2" fill="#b07840" stroke="#5a3a10" stroke-width="2"/>
+          <!-- Back slats — straight upright -->
+          <rect x="54" y="42" width="14" height="140" rx="4" fill="#c8955a" stroke="#5a3a10" stroke-width="2"/>
+          <rect x="74" y="32" width="14" height="148" rx="4" fill="#c8955a" stroke="#5a3a10" stroke-width="2"/>
+          <!-- Back top curve -->
+          <path d="M50 48 Q72 22 90 32" stroke="#5a3a10" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <!-- Back bottom rail -->
+          <rect x="50" y="172" width="112" height="12" rx="3" fill="#b07840" stroke="#5a3a10" stroke-width="2"/>
+          <!-- Flat seat indicator line -->
+          <line x1="64" y1="198" x2="164" y2="198" stroke="#b5832a" stroke-width="2" stroke-dasharray="5,3"/>
+        </svg>
+      </div>
+      <div class="style-info">
+        <div class="style-name">Flat Seat</div>
+        <div class="style-tag">Classic · Traditional · Low-profile</div>
+        <p class="style-desc">The original Adirondack profile. Seat slats run flat and level — clean lines, simple geometry, timeless look. Back sits upright with a slight lean. Preferred for porches where the aesthetic is the priority.</p>
+        <ul class="style-features">
+          <li>Flat horizontal seat slats</li>
+          <li>Straight back panel, slight recline</li>
+          <li>Classic Adirondack silhouette</li>
+          <li>Easier to get in and out of</li>
+          <li>Best for: porches, lakehouse decks, fire pits</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="style-card style-card-right" id="style-curved">
+      <div class="style-info">
+        <div class="style-name">Curved Seat</div>
+        <div class="style-tag">Ergonomic · Contoured · Lumbar support</div>
+        <p class="style-desc">A custom interpretation of the classic. Seat slats are cut and set on a gentle curve — cradles the body instead of holding it flat. Back panel follows the same curve to support the lumbar. Built for people who sit for hours.</p>
+        <ul class="style-features">
+          <li>Gently curved seat for body contouring</li>
+          <li>Lumbar-supportive back profile</li>
+          <li>More complex cut — shows in the detail</li>
+          <li>Deeper, more enveloping sit</li>
+          <li>Best for: extended sitting, reading, evening porches</li>
+        </ul>
+      </div>
+      <div class="style-svg-wrap">
+        <!-- Curved Seat Side Profile SVG -->
+        <svg viewBox="0 0 260 300" xmlns="http://www.w3.org/2000/svg" class="style-svg">
+          <!-- Rocker -->
+          <path d="M18 268 Q70 285 140 280 Q195 275 242 262" stroke="#5a3a10" stroke-width="7" fill="none" stroke-linecap="round"/>
+          <!-- Back leg -->
+          <line x1="52" y1="265" x2="62" y2="118" stroke="#5a3a10" stroke-width="11" stroke-linecap="round"/>
+          <!-- Front leg -->
+          <rect x="140" y="220" width="22" height="48" rx="2" fill="#b07840" stroke="#5a3a10" stroke-width="2"/>
+          <!-- CURVED seat — gentle bowl shape -->
+          <path d="M64 207 Q90 218 114 216 Q130 215 164 210" stroke="#5a3a10" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <path d="M64 215 Q90 227 114 224 Q130 223 164 218" stroke="#5a3a10" stroke-width="9" stroke-linecap="round" fill="none" stroke="#c8955a"/>
+          <path d="M64 215 Q90 227 114 224 Q130 223 164 218" stroke="#5a3a10" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <!-- Second seat slat curve -->
+          <path d="M64 200 Q90 210 114 208 Q130 207 164 202" stroke="#c8955a" stroke-width="9" stroke-linecap="round" fill="none"/>
+          <path d="M64 200 Q90 210 114 208 Q130 207 164 202" stroke="#5a3a10" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <!-- Armrest — flat, wide -->
+          <rect x="50" y="174" width="102" height="13" rx="5" fill="#c8955a" stroke="#5a3a10" stroke-width="2.5"/>
+          <!-- Arm support -->
+          <rect x="140" y="187" width="18" height="26" rx="2" fill="#b07840" stroke="#5a3a10" stroke-width="2"/>
+          <!-- Back slats — curved lumbar profile -->
+          <path d="M52 170 Q46 120 56 42" stroke="#5a3a10" stroke-width="14" stroke-linecap="round" fill="none"/>
+          <path d="M72 170 Q64 118 76 30" stroke="#5a3a10" stroke-width="14" stroke-linecap="round" fill="none"/>
+          <!-- Back highlight (lighter wood color) -->
+          <path d="M52 170 Q46 120 56 42" stroke="#c8955a" stroke-width="10" stroke-linecap="round" fill="none"/>
+          <path d="M72 170 Q64 118 76 30" stroke="#c8955a" stroke-width="10" stroke-linecap="round" fill="none"/>
+          <!-- Back top curve -->
+          <path d="M50 48 Q68 20 88 30" stroke="#5a3a10" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <!-- Back bottom rail with curve -->
+          <rect x="48" y="170" width="114" height="12" rx="3" fill="#b07840" stroke="#5a3a10" stroke-width="2"/>
+          <!-- Curve indicator line -->
+          <path d="M64 198 Q90 209 114 207 Q132 206 164 200" stroke="#b5832a" stroke-width="2" stroke-dasharray="5,3" fill="none"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="styles-note">
+    <span>✝️</span>
+    <div>Both styles are part of our commission process. When you reserve a set, we'll talk through which profile fits your space — or mix both in the same order. We know what we can build, and we'll guide you to the right chair.</div>
+  </div>
+</section>
+
 <!-- SETS -->
 <section class="sets-section" id="sets">
   <div class="section-label">Commission a Set</div>
@@ -1523,7 +1744,7 @@
   </div>
 
   <div class="sets-footer-note">
-    <strong>Not sure which set is right for your space?</strong> Text us at <a href="sms:9728347204">(972) 834-7204</a> or <a href="#" onclick="openModal();return false;">send a message</a>. No pressure, no rush. We'll talk through it.
+    <strong>Not sure which set or style is right for your space?</strong> Both flat seat and curved (lumbar support) profiles are available in any set size — or mix both in the same commission. Text us at <a href="sms:9728347204">(972) 834-7204</a> or <a href="#" onclick="openModal();return false;">send a message</a> and we'll walk you through it.
   </div>
 </section>
 <!-- STAIN COLORS -->
@@ -1898,12 +2119,23 @@
         </select>
       </div>
       <div class="form-group">
+        <label>Chair Style</label>
+        <select name="style">
+          <option value="flat">Flat Seat — Classic traditional profile</option>
+          <option value="curved">Curved Seat — Contoured with lumbar support</option>
+          <option value="mixed">Mixed set — some of each</option>
+          <option value="unsure">Not sure — let's talk through it</option>
+        </select>
+      </div>
+      <div class="form-group">
         <label>Preferred Stain Color (optional)</label>
         <select name="stain">
-          <option value="natural">Natural (light honey)</option>
+          <option value="honey-oak">Honey Oak (natural, warm)</option>
+          <option value="cedar-red">Cedar Red</option>
           <option value="medium-walnut">Medium Walnut</option>
           <option value="dark-walnut">Dark Walnut</option>
           <option value="weathered-gray">Weathered Gray</option>
+          <option value="ebony">Ebony</option>
           <option value="custom">Custom — I'll describe it</option>
         </select>
       </div>
@@ -1957,12 +2189,13 @@
     const phone = data.get('phone');
     const email = data.get('email');
     const qty = data.get('quantity');
+    const style = data.get('style');
     const stain = data.get('stain');
     const notes = data.get('notes');
 
-    const subject = encodeURIComponent(`Chair Order Request — ${name}`);
+    const subject = encodeURIComponent(`Commission Inquiry — ${name}`);
     const body = encodeURIComponent(
-      `New chair order request!\n\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nQuantity: ${qty}\nStain: ${stain}\nNotes: ${notes || 'None'}`
+      `New commission inquiry!\n\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nSet Size: ${qty}\nChair Style: ${style}\nStain: ${stain}\nNotes: ${notes || 'None'}`
     );
 
     window.location.href = `mailto:mathis@mathisrestorations.com?subject=${subject}&body=${body}`;
