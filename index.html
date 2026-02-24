@@ -308,6 +308,37 @@
     max-width: 560px;
   }
 
+  /* ── SCRIPTURE BANNER ──────────────── */
+  .scripture-banner {
+    background: var(--oak-dark);
+    color: white;
+    text-align: center;
+    padding: 40px 80px;
+  }
+
+  .scripture-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-style: italic;
+    line-height: 1.65;
+    max-width: 760px;
+    margin: 0 auto 12px;
+    color: rgba(255,255,255,0.92);
+  }
+
+  .scripture-ref {
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--oak-light);
+    font-weight: 500;
+  }
+
+  @media (max-width: 900px) {
+    .scripture-banner { padding: 36px 24px; }
+    .scripture-text { font-size: 17px; }
+  }
+
   /* ── STORY ──────────────────────────── */
   .story {
     background: var(--warm-white);
@@ -979,6 +1010,12 @@
   <div class="trust-item"><span class="trust-icon">⏱️</span> 4–8 week lead time</div>
 </div>
 
+<!-- SCRIPTURE BANNER -->
+<div class="scripture-banner">
+  <div class="scripture-text">"May the favor of the Lord our God rest on us; establish the work of our hands for us — yes, establish the work of our hands."</div>
+  <div class="scripture-ref">— Psalm 90:17</div>
+</div>
+
 <!-- STORY -->
 <section class="story" id="story">
   <div class="story-images">
@@ -996,7 +1033,7 @@
   <div class="story-text">
     <div class="section-label">Our Story</div>
     <h2 class="section-title">Built by hand.<br>Built to outlast you.</h2>
-    <blockquote class="story-quote">"We don't build furniture. We build heirlooms."</blockquote>
+    <blockquote class="story-quote">"Whatever you do, work at it with all your heart, as working for the Lord, not for human masters."<span style="display:block; font-size:13px; letter-spacing:1.5px; text-transform:uppercase; margin-top:10px; font-style:normal; color:var(--oak-dark); font-weight:600;">— Colossians 3:23</span></blockquote>
     <p class="story-body">Every Adirondack rocker that leaves our shop in Sulphur, Oklahoma is built from solid wood, cut by hand, shaped on the same equipment my family has used for years. No shortcuts. No prefab parts. No assembly line.</p>
     <p class="story-body">We pick the wood for grain and character. We sand it by hand until it's smooth to the touch. Every stain is applied in multiple coats and buffed out before it ships. The result is a chair that gets better-looking every year it sits on your porch.</p>
     <p class="story-body">Each chair is made to order. You pick the stain. We build it, finish it, and ship it directly to your door — anywhere in the country.</p>
@@ -1166,6 +1203,7 @@
   <div>
     <div class="footer-brand">Sulphur <span>Rocker</span></div>
     <div class="footer-tagline">Handmade in Sulphur, Oklahoma since the beginning.</div>
+    <div style="font-size:12px; color: rgba(255,255,255,0.3); margin-top:6px; font-style:italic;">"Establish the work of our hands." — Ps. 90:17</div>
   </div>
   <div class="footer-contact">
     <a href="sms:9728347204">Text: (972) 834-7204</a>
