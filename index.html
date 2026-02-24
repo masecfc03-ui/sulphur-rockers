@@ -959,52 +959,7 @@
     </div>
   </div>
   <div class="hero-image" id="hero-image-slot">
-    <!-- Photo drops in here -->
-    <div class="hero-image-placeholder" id="hero-placeholder">
-      <svg viewBox="0 0 400 440" class="chair-illustration" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Rockers -->
-        <path d="M60 390 Q130 410 200 405 Q270 400 340 385" stroke="#5a3a10" stroke-width="8" stroke-linecap="round" fill="none"/>
-        <!-- Back legs -->
-        <line x1="92" y1="388" x2="102" y2="200" stroke="#5a3a10" stroke-width="10" stroke-linecap="round"/>
-        <!-- Front legs -->
-        <line x1="175" y1="390" x2="178" y2="270" stroke="#5a3a10" stroke-width="10" stroke-linecap="round"/>
-        <line x1="245" y1="388" x2="242" y2="272" stroke="#5a3a10" stroke-width="10" stroke-linecap="round"/>
-        <!-- Back right leg -->
-        <line x1="308" y1="384" x2="298" y2="200" stroke="#5a3a10" stroke-width="10" stroke-linecap="round"/>
-
-        <!-- Seat slats -->
-        <rect x="100" y="262" width="200" height="12" rx="4" fill="#c8955a"/>
-        <rect x="100" y="278" width="200" height="12" rx="4" fill="#c8955a"/>
-        <rect x="100" y="294" width="200" height="12" rx="4" fill="#c8955a"/>
-        <rect x="100" y="310" width="200" height="12" rx="4" fill="#b07840"/>
-
-        <!-- Seat frame -->
-        <rect x="96" y="258" width="208" height="68" rx="3" stroke="#5a3a10" stroke-width="3" fill="none"/>
-
-        <!-- Armrests -->
-        <rect x="72" y="220" width="68" height="14" rx="6" fill="#c8955a" stroke="#5a3a10" stroke-width="2"/>
-        <rect x="260" y="220" width="68" height="14" rx="6" fill="#c8955a" stroke="#5a3a10" stroke-width="2"/>
-
-        <!-- Arm supports -->
-        <rect x="80" y="234" width="18" height="30" rx="3" fill="#b07840" stroke="#5a3a10" stroke-width="2"/>
-        <rect x="302" y="234" width="18" height="30" rx="3" fill="#b07840" stroke="#5a3a10" stroke-width="2"/>
-
-        <!-- Back slats -->
-        <rect x="118" y="90" width="22" height="140" rx="5" fill="#c8955a" stroke="#5a3a10" stroke-width="2"/>
-        <rect x="148" y="78" width="22" height="152" rx="5" fill="#c8955a" stroke="#5a3a10" stroke-width="2"/>
-        <rect x="178" y="70" width="22" height="160" rx="5" fill="#c8955a" stroke="#5a3a10" stroke-width="2"/>
-        <rect x="208" y="70" width="22" height="160" rx="5" fill="#c8955a" stroke="#5a3a10" stroke-width="2"/>
-        <rect x="238" y="78" width="22" height="152" rx="5" fill="#c8955a" stroke="#5a3a10" stroke-width="2"/>
-        <rect x="268" y="90" width="22" height="140" rx="5" fill="#c8955a" stroke="#5a3a10" stroke-width="2"/>
-
-        <!-- Top rail (fan shape) -->
-        <path d="M100 105 Q200 45 300 105" stroke="#5a3a10" stroke-width="8" fill="#b07840" opacity="0.7"/>
-        <path d="M100 112 Q200 52 300 112" stroke="#5a3a10" stroke-width="4" fill="none"/>
-
-        <!-- Bottom back rail -->
-        <rect x="96" y="224" width="208" height="12" rx="4" fill="#b07840" stroke="#5a3a10" stroke-width="2"/>
-      </svg>
-    </div>
+    <img src="chair-hero.jpg" alt="Handmade Adirondack Rocking Chair by Mathis Woodworks" style="width:100%;height:100%;object-fit:cover;display:block;">
     <div class="hero-image-overlay">
       <div class="hero-image-caption">Sulphur, Oklahoma · Est. Mathis Family</div>
     </div>
@@ -1028,10 +983,10 @@
 <section class="story" id="story">
   <div class="story-images">
     <div class="story-img-main" id="story-img-main-slot">
-      <div class="img-placeholder">🪵</div>
+      <img src="chair-group.jpg" alt="Four handmade rocking chairs outside stone building" style="width:100%;height:100%;object-fit:cover;">
     </div>
     <div class="story-img-secondary" id="story-img-secondary-slot">
-      <div class="img-placeholder">🔨</div>
+      <img src="chair-side.jpg" alt="Side view of Adirondack rocking chair" style="width:100%;height:100%;object-fit:cover;">
     </div>
     <div class="story-badge">
       <span class="num">100%</span>
@@ -1051,13 +1006,19 @@
 <!-- PRODUCT -->
 <section class="product" id="product">
   <div class="product-gallery">
-    <div class="gallery-main" id="gallery-main-slot">
-      <div class="img-placeholder" style="height:100%; align-items:center; justify-content:center; display:flex; font-size:80px;">🪑</div>
+    <div class="gallery-main" id="gallery-main-slot" style="cursor:pointer;" onclick="setMainImg('chair-hero.jpg')">
+      <img id="gallery-main-img" src="chair-hero.jpg" alt="Mathis Woodworks Adirondack Rocking Chair" style="width:100%;height:100%;object-fit:cover;">
     </div>
     <div class="gallery-thumbs">
-      <div class="gallery-thumb" id="thumb-1"><div class="img-placeholder">🌲</div></div>
-      <div class="gallery-thumb" id="thumb-2"><div class="img-placeholder">🔨</div></div>
-      <div class="gallery-thumb" id="thumb-3"><div class="img-placeholder">🎨</div></div>
+      <div class="gallery-thumb" id="thumb-1" onclick="setMainImg('chair-hero.jpg')" style="border:2px solid var(--oak);">
+        <img src="chair-hero.jpg" alt="Chair front view" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+      <div class="gallery-thumb" id="thumb-2" onclick="setMainImg('chair-side.jpg')">
+        <img src="chair-side.jpg" alt="Chair side view" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+      <div class="gallery-thumb" id="thumb-3" onclick="setMainImg('chair-group.jpg')">
+        <img src="chair-group.jpg" alt="Multiple chairs" style="width:100%;height:100%;object-fit:cover;">
+      </div>
     </div>
   </div>
   <div class="product-details">
@@ -1266,6 +1227,12 @@
 </div>
 
 <script>
+  function setMainImg(src) {
+    document.getElementById('gallery-main-img').src = src;
+    document.querySelectorAll('.gallery-thumb').forEach(t => t.style.border = '');
+    event.currentTarget.style.border = '2px solid var(--oak)';
+  }
+
   function openModal() {
     document.getElementById('orderModal').classList.add('open');
     document.body.style.overflow = 'hidden';
