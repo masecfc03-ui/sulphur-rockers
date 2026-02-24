@@ -582,6 +582,228 @@
     border-left: 3px solid var(--oak);
   }
 
+  /* ── SETS SECTION ───────────────────── */
+  .sets-section {
+    background: var(--cream);
+    padding: 100px 80px;
+  }
+  .sets-section .section-title { margin-bottom: 12px; max-width: 600px; }
+  .sets-section .section-sub { margin-bottom: 52px; max-width: 580px; }
+
+  .sets-photo-row {
+    display: grid;
+    grid-template-columns: 1fr 120px;
+    grid-template-rows: auto auto;
+    gap: 12px;
+    max-width: 700px;
+    margin-bottom: 60px;
+  }
+
+  .sets-main-photo {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    border-radius: 6px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+  }
+
+  .sets-main-photo img { width:100%; height:100%; object-fit:cover; display:block; }
+
+  .sets-thumbs {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .set-thumb {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.2s;
+  }
+
+  .set-thumb.active { border-color: var(--oak); }
+  .set-thumb:hover { border-color: var(--oak-light); }
+
+  .sets-photo-caption {
+    grid-column: 1 / 3;
+    grid-row: 2;
+    font-size: 12px;
+    color: var(--text-muted);
+    font-style: italic;
+    padding-top: 4px;
+  }
+
+  /* Set cards */
+  .sets-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1060px;
+    margin-bottom: 40px;
+  }
+
+  .set-card {
+    background: white;
+    border-radius: 10px;
+    padding: 36px 28px 28px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.07);
+    border: 2px solid transparent;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+
+  .set-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  }
+
+  .set-featured {
+    border-color: var(--oak);
+    background: var(--bark);
+    color: white;
+  }
+
+  .set-card-badge {
+    position: absolute;
+    top: -13px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--oak);
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 5px 16px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  .set-card-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 64px;
+    font-weight: 700;
+    color: rgba(181,131,42,0.2);
+    line-height: 1;
+    margin-bottom: -8px;
+  }
+
+  .set-featured .set-card-num { color: rgba(181,131,42,0.3); }
+
+  .set-card-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .set-featured .set-card-label { color: rgba(255,255,255,0.5); }
+
+  .set-card-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 44px;
+    font-weight: 700;
+    color: var(--bark);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .set-featured .set-card-price { color: white; }
+
+  .set-card-per {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+  }
+
+  .set-featured .set-card-per { color: rgba(255,255,255,0.5); }
+
+  .set-card-desc {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    flex: 1;
+    border-top: 1px solid rgba(0,0,0,0.06);
+    padding-top: 16px;
+  }
+
+  .set-featured .set-card-desc { color: rgba(255,255,255,0.65); border-top-color: rgba(255,255,255,0.1); }
+
+  .set-card-specs { margin-bottom: 24px; }
+
+  .set-spec {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    padding: 7px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    color: var(--text-muted);
+  }
+
+  .set-featured .set-spec { border-bottom-color: rgba(255,255,255,0.08); color: rgba(255,255,255,0.5); }
+  .set-spec span:last-child { font-weight: 600; color: var(--bark); }
+  .set-featured .set-spec span:last-child { color: white; }
+
+  .set-card-btn {
+    display: block;
+    text-align: center;
+    padding: 16px;
+    background: var(--bark);
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: background 0.2s;
+    margin-bottom: 10px;
+  }
+
+  .set-featured .set-card-btn { background: var(--oak); color: white; }
+  .set-card-btn:hover { background: var(--oak-dark); }
+
+  .set-card-fine {
+    font-size: 11px;
+    color: var(--text-muted);
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  .set-featured .set-card-fine { color: rgba(255,255,255,0.35); }
+
+  .sets-footer-note {
+    font-size: 14px;
+    color: var(--text-muted);
+    padding: 20px 24px;
+    border: 1px solid rgba(181,131,42,0.2);
+    border-radius: 6px;
+    max-width: 640px;
+    line-height: 1.7;
+  }
+
+  .sets-footer-note strong { color: var(--bark); }
+  .sets-footer-note a { color: var(--oak); font-weight: 600; text-decoration: none; }
+
+  @media (max-width: 900px) {
+    .sets-section { padding: 72px 24px; }
+    .sets-cards { grid-template-columns: 1fr; }
+    .set-card:hover { transform: none; }
+    .sets-photo-row { grid-template-columns: 1fr; }
+    .sets-thumbs { flex-direction: row; }
+    .set-thumb { width: 80px; aspect-ratio: 1; }
+  }
+
   /* ── STAIN COLORS ───────────────────── */
   .stains-section {
     background: var(--warm-white);
@@ -1157,28 +1379,28 @@
   <a href="#" class="nav-logo">Sulphur <span>Rocker</span></a>
   <ul class="nav-links">
     <li><a href="#story">Our Story</a></li>
-    <li><a href="#product">The Chair</a></li>
-    <li><a href="#process">Process</a></li>
+    <li><a href="#sets">Commission</a></li>
+    <li><a href="#schematics">Specs</a></li>
     <li><a href="#reviews">Reviews</a></li>
-    <li><a href="https://buy.stripe.com/cNi7sE5zq6Yc7Pk4zNfrW03" class="nav-cta" target="_blank">Order Now</a></li>
+    <li><a href="#sets" class="nav-cta">Inquire</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
 <section class="hero" style="padding:0;">
   <div class="hero-content">
-    <div class="hero-badge">Handcrafted in Oklahoma · Built on Faith</div>
-    <h1>Built to<br><em>last a lifetime.</em></h1>
-    <p class="hero-sub">Every chair is cut, shaped, and finished by hand in Sulphur, Oklahoma. Solid wood. Deep stain. Made with purpose — and prayer. Rockers that move like they were made for your porch — because they were.</p>
+    <div class="hero-badge">By Commission Only · Sulphur, Oklahoma</div>
+    <h1>Not everyone<br>gets <em>one of ours.</em></h1>
+    <p class="hero-sub">We build in sets of 4, 6, and 8. By hand. One commission at a time. Lead times run 3–6 months — because that's what it takes to do it right. If you want something built fast, we're not your shop. If you want something that outlasts you, we are.</p>
     <div class="hero-actions">
-      <a href="https://buy.stripe.com/cNi7sE5zq6Yc7Pk4zNfrW03" class="btn-primary" target="_blank">Order Your Chair — $750</a>
-      <a href="#product" class="btn-outline">See Details</a>
+      <a href="#sets" class="btn-primary">See Available Sets</a>
+      <a href="#story" class="btn-outline">Our Story</a>
     </div>
     <div style="margin-top: 28px; display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
       <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://masecfc03-ui.github.io/sulphur-rockers/&color=2c1f0e&bgcolor=faf7f2" alt="Scan to visit" style="border-radius:6px; border:2px solid rgba(181,131,42,0.3);">
       <div style="font-size:13px; color: var(--text-muted); line-height:1.7;">
-        <strong style="color:var(--bark); display:block;">Scan or share this link</strong>
-        📦 Ships anywhere · 4–8 week lead time · Custom stain colors
+        <strong style="color:var(--bark); display:block;">$1,000 per chair · Sets only</strong>
+        Commissions open — limited availability
       </div>
     </div>
   </div>
@@ -1192,15 +1414,15 @@
 
 <!-- TRUST BAR -->
 <div class="trust-bar">
-  <div class="trust-item"><span class="trust-icon">🌲</span> Solid wood construction</div>
+  <div class="trust-item"><span class="trust-icon">🌲</span> Solid wood, hand-selected</div>
   <div class="trust-divider"></div>
-  <div class="trust-item"><span class="trust-icon">🔨</span> Hand-built, one at a time</div>
+  <div class="trust-item"><span class="trust-icon">🔨</span> Commission only — no stock</div>
   <div class="trust-divider"></div>
-  <div class="trust-item"><span class="trust-icon">🎨</span> Custom stain colors</div>
+  <div class="trust-item"><span class="trust-icon">✝️</span> Built on faith</div>
   <div class="trust-divider"></div>
-  <div class="trust-item"><span class="trust-icon">📦</span> Ships anywhere in the US</div>
+  <div class="trust-item"><span class="trust-icon">📦</span> Delivered anywhere in the US</div>
   <div class="trust-divider"></div>
-  <div class="trust-item"><span class="trust-icon">⏱️</span> 4–8 week lead time</div>
+  <div class="trust-item"><span class="trust-icon">⏱️</span> 3–6 month lead time</div>
 </div>
 
 <!-- SCRIPTURE BANNER -->
@@ -1234,86 +1456,76 @@
   </div>
 </section>
 
-<!-- PRODUCT -->
-<section class="product" id="product">
-  <div class="product-gallery">
-    <div class="gallery-main" id="gallery-main-slot" style="cursor:pointer;" onclick="setMainImg('chair-hero.jpg')">
-      <img id="gallery-main-img" src="chair-hero.jpg" alt="Sulphur Rocker Adirondack Rocking Chair" style="width:100%;height:100%;object-fit:cover;">
+<!-- SETS -->
+<section class="sets-section" id="sets">
+  <div class="section-label">Commission a Set</div>
+  <h2 class="section-title">We build in sets.<br>That's how it's done.</h2>
+  <p class="section-sub">Every commission is built as a matched set — same wood lot, same stain batch, same hands. You don't buy one chair. You commission a set built to last generations.</p>
+
+  <div class="sets-photo-row">
+    <div class="sets-main-photo">
+      <img id="gallery-main-img" src="chair-group.jpg" alt="Sulphur Rocker set">
     </div>
-    <div class="gallery-thumbs">
-      <div class="gallery-thumb" id="thumb-1" onclick="setMainImg('chair-hero.jpg')" style="border:2px solid var(--oak);">
-        <img src="chair-hero.jpg" alt="Chair front view" style="width:100%;height:100%;object-fit:cover;">
+    <div class="sets-thumbs">
+      <img src="chair-group.jpg" onclick="setMainImg('chair-group.jpg', this)" class="set-thumb active" alt="Group">
+      <img src="chair-hero.jpg" onclick="setMainImg('chair-hero.jpg', this)" class="set-thumb" alt="Front">
+      <img src="chair-side.jpg" onclick="setMainImg('chair-side.jpg', this)" class="set-thumb" alt="Side">
+    </div>
+    <p class="sets-photo-caption">Each set built from the same wood lot — matched grain, matched stain, matched craftsmanship.</p>
+  </div>
+
+  <div class="sets-cards">
+    <div class="set-card">
+      <div class="set-card-num">4</div>
+      <div class="set-card-label">Set of Four</div>
+      <div class="set-card-price">$4,000</div>
+      <div class="set-card-per">$1,000 per chair · Delivery included</div>
+      <p class="set-card-desc">Perfect for a wraparound porch, cabin deck, or fire pit circle. Four matched rockers, one commission, one price.</p>
+      <div class="set-card-specs">
+        <div class="set-spec"><span>Lead Time</span><span>3–4 months</span></div>
+        <div class="set-spec"><span>Stain</span><span>Your choice</span></div>
+        <div class="set-spec"><span>Engraving</span><span>Available</span></div>
       </div>
-      <div class="gallery-thumb" id="thumb-2" onclick="setMainImg('chair-side.jpg')">
-        <img src="chair-side.jpg" alt="Chair side view" style="width:100%;height:100%;object-fit:cover;">
+      <a href="https://buy.stripe.com/eVq28k3ri0zOb1wd6jfrW04" target="_blank" class="set-card-btn">Reserve Set of Four</a>
+      <div class="set-card-fine">🔒 Stripe secure checkout · We confirm details within 48 hours</div>
+    </div>
+
+    <div class="set-card set-featured">
+      <div class="set-card-badge">Most Requested</div>
+      <div class="set-card-num">6</div>
+      <div class="set-card-label">Set of Six</div>
+      <div class="set-card-price">$6,000</div>
+      <div class="set-card-per">$1,000 per chair · Delivery included</div>
+      <p class="set-card-desc">The most requested commission. Fills a full porch or lake house deck beautifully. Six is the number people come back and say they wish they had started with.</p>
+      <div class="set-card-specs">
+        <div class="set-spec"><span>Lead Time</span><span>4–5 months</span></div>
+        <div class="set-spec"><span>Stain</span><span>Your choice</span></div>
+        <div class="set-spec"><span>Engraving</span><span>Available</span></div>
       </div>
-      <div class="gallery-thumb" id="thumb-3" onclick="setMainImg('chair-group.jpg')">
-        <img src="chair-group.jpg" alt="Multiple chairs" style="width:100%;height:100%;object-fit:cover;">
+      <a href="https://buy.stripe.com/7sYeV62ne4Q45Hc2rFfrW05" target="_blank" class="set-card-btn">Reserve Set of Six</a>
+      <div class="set-card-fine">🔒 Stripe secure checkout · We confirm details within 48 hours</div>
+    </div>
+
+    <div class="set-card">
+      <div class="set-card-num">8</div>
+      <div class="set-card-label">Set of Eight</div>
+      <div class="set-card-price">$8,000</div>
+      <div class="set-card-per">$1,000 per chair · Delivery included</div>
+      <p class="set-card-desc">A full statement commission. Ranches, lodges, estates, and anyone who understands that the right porch doesn't have an empty chair. Eight rockers, built as one.</p>
+      <div class="set-card-specs">
+        <div class="set-spec"><span>Lead Time</span><span>5–6 months</span></div>
+        <div class="set-spec"><span>Stain</span><span>Your choice</span></div>
+        <div class="set-spec"><span>Engraving</span><span>Available</span></div>
       </div>
+      <a href="https://buy.stripe.com/5kQ00c8LC82g8To1nBfrW06" target="_blank" class="set-card-btn">Reserve Set of Eight</a>
+      <div class="set-card-fine">🔒 Stripe secure checkout · We confirm details within 48 hours</div>
     </div>
   </div>
-  <div class="product-details">
-    <div class="product-name">Adirondack<br>Rocking Chair</div>
-    <div class="product-sku">Sulphur Rocker · Signature Series</div>
-    <div class="product-price-row">
-      <div class="product-price">$750</div>
-      <div class="product-price-note">per chair<br>free shipping</div>
-    </div>
-    <div class="availability">In production — accepting orders now</div>
-    <p class="product-desc">
-      Solid wood frame with a fan-back design, wide armrests, and curved rockers shaped for smooth motion. Deep-stained and buffed to a rich finish. Built one at a time in Sulphur, Oklahoma.
-    </p>
-    <div class="specs-list">
-      <div class="spec-row">
-        <span class="spec-key">Seat Width</span>
-        <span class="spec-val">22 inches</span>
-      </div>
-      <div class="spec-row">
-        <span class="spec-key">Seat Depth</span>
-        <span class="spec-val">23 inches</span>
-      </div>
-      <div class="spec-row">
-        <span class="spec-key">Overall Height</span>
-        <span class="spec-val">~43 inches</span>
-      </div>
-      <div class="spec-row">
-        <span class="spec-key">Rocker Length</span>
-        <span class="spec-val">~30 inches</span>
-      </div>
-      <div class="spec-row">
-        <span class="spec-key">Material</span>
-        <span class="spec-val">Solid Wood</span>
-      </div>
-      <div class="spec-row">
-        <span class="spec-key">Finish</span>
-        <span class="spec-val">Hand-stained, multi-coat</span>
-      </div>
-      <div class="spec-row">
-        <span class="spec-key">Lead Time</span>
-        <span class="spec-val">4–8 weeks</span>
-      </div>
-      <div class="spec-row">
-        <span class="spec-key">Shipping</span>
-        <span class="spec-val">Anywhere in the US, included</span>
-      </div>
-      <div class="spec-row">
-        <span class="spec-key">Custom Colors</span>
-        <span class="spec-val">Yes — ask us</span>
-      </div>
-    </div>
-    <div class="order-section">
-      <a href="https://buy.stripe.com/cNi7sE5zq6Yc7Pk4zNfrW03" class="btn-primary" target="_blank" style="text-align:center; font-size: 15px; padding: 18px;">Order Now — Secure Checkout $750</a>
-      <div style="text-align:center; font-size:12px; color:var(--text-muted); margin-top: 4px;">🔒 Powered by Stripe · Adjust quantity at checkout · Ships anywhere</div>
-      <div class="order-note">
-        ℹ️ Made to order. You can pick your quantity at checkout (up to 10). We'll reach out within 24 hours to confirm stain color and shipping details.
-      </div>
-      <div style="margin-top:12px; text-align:center;">
-        <a href="#" onclick="openModal(); return false;" style="font-size:13px; color:var(--text-muted); text-decoration:underline;">Need a custom size or bulk pricing? Contact us →</a>
-      </div>
-    </div>
+
+  <div class="sets-footer-note">
+    <strong>Not sure which set is right for your space?</strong> Text us at <a href="sms:9728347204">(972) 834-7204</a> or <a href="#" onclick="openModal();return false;">send a message</a>. No pressure, no rush. We'll talk through it.
   </div>
 </section>
-
 <!-- STAIN COLORS -->
 <section class="stains-section" id="stains">
   <div class="section-label">Stain Colors</div>
@@ -1471,42 +1683,42 @@
     <div class="addon-card">
       <div class="addon-icon">☕</div>
       <div class="addon-name">Built-In Cup Holder</div>
-      <div class="addon-price">+ $50</div>
+      <div class="addon-price">+ $75</div>
       <div class="addon-desc">Cut directly into one armrest. Holds up to a 32oz tumbler. Clean, flush, no wobble. Never lose your coffee again.</div>
     </div>
     <div class="addon-card featured">
       <div class="addon-badge">Most Popular</div>
       <div class="addon-icon">✝️</div>
       <div class="addon-name">Scripture Engraving</div>
-      <div class="addon-price">+ $75</div>
+      <div class="addon-price">+ $100</div>
       <div class="addon-desc">Your chosen verse, name, or initials hand-carved into the top back rail. A permanent reminder of what matters. Perfect for gifts.</div>
     </div>
     <div class="addon-card">
       <div class="addon-icon">🌧️</div>
       <div class="addon-name">Premium Weather Seal</div>
-      <div class="addon-price">+ $40</div>
+      <div class="addon-price">+ $60</div>
       <div class="addon-desc">3 additional coats of exterior-grade sealant applied over the stain. Doubles the outdoor lifespan. Recommended for year-round porch chairs.</div>
     </div>
     <div class="addon-card">
       <div class="addon-icon">🪵</div>
       <div class="addon-name">Matching Side Table</div>
-      <div class="addon-price">+ $350</div>
+      <div class="addon-price">+ $450</div>
       <div class="addon-desc">Built to match your chair — same wood, same stain, same craftsmanship. Round top, Adirondack-style legs. Completes the set.</div>
     </div>
     <div class="addon-card">
       <div class="addon-icon">🪑</div>
       <div class="addon-name">Two-Chair Set</div>
-      <div class="addon-price">$1,400 <span style="font-size:12px;color:var(--text-muted);font-weight:400;">save $100</span></div>
+      <div class="addon-price">$1,900 <span style="font-size:12px;color:var(--text-muted);font-weight:400;">save $100 · matched set</span></div>
       <div class="addon-desc">Two matching chairs, same stain, same build. Perfect for a porch, fire pit, or cabin. Built and shipped together.</div>
     </div>
     <div class="addon-card">
       <div class="addon-icon">💌</div>
       <div class="addon-name">Gift Packaging</div>
-      <div class="addon-price">+ $25</div>
+      <div class="addon-price">+ $50</div>
       <div class="addon-desc">Handwritten card, gift wrapping on the armrests and seat, and a note card with the chair's story. Makes an unforgettable gift.</div>
     </div>
   </div>
-  <p style="text-align:center; font-size:13px; color:var(--text-muted); margin-top:28px;">To add any upgrade, <a href="https://buy.stripe.com/cNi7sE5zq6Yc7Pk4zNfrW03" target="_blank" style="color:var(--oak); font-weight:600;">order your chair</a> and mention the add-on in the notes field at checkout. We'll confirm and adjust the total.</p>
+  <p style="text-align:center; font-size:13px; color:var(--text-muted); margin-top:28px;">To add any upgrade, <a href="#sets" target="_blank" style="color:var(--oak); font-weight:600;">select your set</a> and mention the add-on in the notes field at checkout. We'll confirm and adjust the total.</p>
 </section>
 
 <!-- FAITH STRIP -->
@@ -1594,53 +1806,53 @@
 <!-- FAQ -->
 <section class="faq-section" id="faq">
   <div class="section-label">Common Questions</div>
-  <h2 class="section-title">Everything you need to know</h2>
+  <h2 class="section-title">What you need to know</h2>
   <div class="faq-grid">
     <div class="faq-item">
-      <div class="faq-q">How long does it take to build a chair?</div>
-      <div class="faq-a">Every chair is built to order. Lead time is typically 4–8 weeks depending on current orders. We'll give you an exact timeline when you order.</div>
+      <div class="faq-q">Why do you only sell in sets?</div>
+      <div class="faq-a">Because a single chair is a piece of furniture. A matched set is a statement. Every chair in a commission is built from the same wood lot, stained in the same batch, and finished the same day — so they age together and look right together. That's the only way we do it.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How long is the lead time?</div>
+      <div class="faq-a">3–6 months depending on the set size and current commissions. Set of 4: roughly 3–4 months. Set of 6: 4–5 months. Set of 8: 5–6 months. We'd rather take the time to do it right than rush it out the door.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I choose my stain color?</div>
+      <div class="faq-a">Absolutely. After you reserve, we'll reach out to dial in the exact finish. We offer Honey Oak, Cedar Red, Medium Walnut, Dark Walnut, Weathered Gray, Ebony — or describe your own and we'll match it.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">What wood do you use?</div>
-      <div class="faq-a">We use quality solid wood selected for grain, strength, and character. Each board is hand-picked before it touches a saw.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Can I choose my own stain color?</div>
-      <div class="faq-a">Yes. After you order, we'll reach out to confirm your preference. We offer natural, medium walnut, dark walnut, weathered gray, and custom colors — just describe what you're going for.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Do you ship everywhere?</div>
-      <div class="faq-a">Anywhere in the continental US, shipping included in the $750 price. Alaska and Hawaii — contact us for a quote.</div>
+      <div class="faq-a">Solid wood, hand-selected board by board for grain, character, and structural integrity. Each set comes from the same wood lot so every chair matches. We don't use engineered wood, composite, or anything that won't outlast you.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">How does payment work?</div>
-      <div class="faq-a">We process payment securely through Stripe. Full payment is collected at checkout. We start building once payment clears. You'll receive a confirmation and we'll be in touch shortly after.</div>
+      <div class="faq-a">Full payment is collected at checkout through Stripe. Once your commission is reserved, we reach out within 48 hours to confirm every detail — stain, engraving, delivery address, and timeline. We don't start building until everything is locked in.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">Can I order multiple chairs?</div>
-      <div class="faq-a">Yes — you can adjust quantity right on the checkout page (up to 10). For larger orders or commercial quantities, reach out directly and we'll work out pricing.</div>
+      <div class="faq-q">Do you deliver everywhere?</div>
+      <div class="faq-a">Anywhere in the continental US — delivery is included in every set price. Ranches, lake houses, estates, city homes — wherever the porch is, we get there. Alaska and Hawaii available on request.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">What if it arrives damaged?</div>
-      <div class="faq-a">We pack everything carefully, but if something arrives damaged in shipping, just send us a photo and we'll make it right. No hassle.</div>
+      <div class="faq-q">What about scripture engraving?</div>
+      <div class="faq-a">One of our most requested add-ons. Your chosen verse, name, or message hand-carved into the top back rail of each chair. +$75 per chair. Mention it in the notes at checkout and we'll confirm the exact text with you.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">Are these built to last outdoors?</div>
-      <div class="faq-a">Yes. The hand-applied stain provides weather protection. We recommend bringing chairs in during extreme weather or re-applying an exterior finish every couple of years to keep them looking great for decades.</div>
+      <div class="faq-q">How do I care for these outdoors?</div>
+      <div class="faq-a">The hand-applied stain provides solid weather protection. We recommend bringing chairs under cover during harsh weather and re-applying an exterior wood finish every 2–3 years. Treated right, these chairs will still be on that porch in 30 years.</div>
     </div>
   </div>
 </section>
 
 <!-- ORDER CTA -->
 <section class="order-cta">
-  <div class="section-label">Ready to Order?</div>
-  <h2 class="section-title">Your porch is waiting.</h2>
-  <p class="section-sub">Hand-built in Oklahoma. Shipped to your door. Made exactly for you — with every ounce of craft and faith we have.</p>
+  <div class="section-label">Ready to Commission?</div>
+  <h2 class="section-title">Your porch deserves this.</h2>
+  <p class="section-sub">Sets of 4, 6, and 8. Built by hand. Delivered anywhere. Made with purpose — and prayer — from Sulphur, Oklahoma.</p>
   <div class="cta-actions">
-    <a href="https://buy.stripe.com/cNi7sE5zq6Yc7Pk4zNfrW03" class="btn-white" target="_blank">Order Now — $750 · Secure Checkout</a>
-    <a href="sms:9728347204" class="btn-ghost">📱 Text Us a Question</a>
+    <a href="#sets" class="btn-white">See Available Sets</a>
+    <a href="sms:9728347204" class="btn-ghost">📱 Text Us Directly</a>
   </div>
-  <p style="margin-top:20px; font-size:12px; color:rgba(255,255,255,0.45); letter-spacing:0.5px;">🔒 Secure payment via Stripe · Adjust quantity at checkout · Free US shipping</p>
+  <p style="margin-top:20px; font-size:12px; color:rgba(255,255,255,0.45); letter-spacing:0.5px;">$1,000 per chair · 3–6 month lead time · Free delivery anywhere in the US</p>
 </section>
 
 <!-- FOOTER -->
@@ -1715,10 +1927,10 @@
     el.classList.add('active');
   }
 
-  function setMainImg(src) {
+  function setMainImg(src, el) {
     document.getElementById('gallery-main-img').src = src;
-    document.querySelectorAll('.gallery-thumb').forEach(t => t.style.border = '');
-    event.currentTarget.style.border = '2px solid var(--oak)';
+    document.querySelectorAll('.set-thumb').forEach(t => t.classList.remove('active'));
+    if (el) el.classList.add('active');
   }
 
   function openModal() {
