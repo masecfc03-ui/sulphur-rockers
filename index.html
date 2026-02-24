@@ -582,6 +582,142 @@
     border-left: 3px solid var(--oak);
   }
 
+  /* ── STAIN COLORS ───────────────────── */
+  .stains-section {
+    background: var(--warm-white);
+    padding: 100px 80px;
+  }
+  .stains-section .section-title { margin-bottom: 12px; }
+  .stains-section .section-sub { margin-bottom: 48px; }
+  .stains-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 16px;
+    max-width: 1060px;
+  }
+  .stain-card {
+    cursor: pointer;
+    border-radius: 8px;
+    padding: 16px 12px 18px;
+    background: white;
+    border: 2px solid transparent;
+    text-align: center;
+    transition: all 0.2s;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.05);
+  }
+  .stain-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
+  .stain-card.active { border-color: var(--oak); box-shadow: 0 4px 16px rgba(181,131,42,0.25); }
+  .stain-swatch {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    margin: 0 auto 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+  .stain-name { font-weight: 700; font-size: 13px; color: var(--bark); margin-bottom: 6px; }
+  .stain-desc { font-size: 11px; color: var(--text-muted); line-height: 1.55; }
+
+  /* ── SCHEMATICS ──────────────────────── */
+  .schematics-section {
+    background: var(--cream);
+    padding: 100px 80px;
+  }
+  .schematics-section .section-title { margin-bottom: 12px; }
+  .schematics-section .section-sub { margin-bottom: 48px; }
+  .schematics-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr 280px;
+    gap: 32px;
+    align-items: start;
+    background: white;
+    border-radius: 8px;
+    padding: 40px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+    max-width: 1060px;
+  }
+  .schematic-box { text-align: center; }
+  .schematic-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .schematic-svg { width: 100%; max-width: 300px; height: auto; }
+  .schematic-specs { padding-top: 8px; border-left: 1px solid rgba(181,131,42,0.2); padding-left: 32px; }
+  .sch-spec-title {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--oak);
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .sch-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    padding: 7px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    color: var(--text-muted);
+  }
+  .sch-row span:last-child { font-weight: 600; color: var(--bark); }
+
+  /* ── ADD-ONS ─────────────────────────── */
+  .addons-section {
+    background: var(--warm-white);
+    padding: 100px 80px;
+  }
+  .addons-section .section-title { margin-bottom: 12px; }
+  .addons-section .section-sub { margin-bottom: 48px; }
+  .addons-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1060px;
+  }
+  .addon-card {
+    background: white;
+    border-radius: 8px;
+    padding: 28px 24px;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+    position: relative;
+    border: 2px solid transparent;
+    transition: border-color 0.2s, transform 0.15s;
+  }
+  .addon-card:hover { border-color: rgba(181,131,42,0.3); transform: translateY(-2px); }
+  .addon-card.featured { border-color: var(--oak); }
+  .addon-badge {
+    position: absolute;
+    top: -11px;
+    left: 20px;
+    background: var(--oak);
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+  }
+  .addon-icon { font-size: 30px; margin-bottom: 10px; display: block; }
+  .addon-name { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--bark); margin-bottom: 4px; }
+  .addon-price { font-size: 20px; font-weight: 700; color: var(--oak); margin-bottom: 10px; }
+  .addon-desc { font-size: 13px; line-height: 1.7; color: var(--text-muted); }
+
+  @media (max-width: 900px) {
+    .stains-grid { grid-template-columns: repeat(3, 1fr); }
+    .schematics-section, .stains-section, .addons-section { padding: 72px 24px; }
+    .schematics-wrap { grid-template-columns: 1fr; padding: 24px; }
+    .schematic-specs { border-left: none; padding-left: 0; border-top: 1px solid rgba(181,131,42,0.2); padding-top: 20px; }
+    .addons-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 600px) {
+    .stains-grid { grid-template-columns: repeat(2, 1fr); }
+    .addons-grid { grid-template-columns: 1fr; }
+  }
+
   /* ── PROCESS ────────────────────────── */
   .process {
     background: var(--bark);
@@ -1031,9 +1167,9 @@
 <!-- HERO -->
 <section class="hero" style="padding:0;">
   <div class="hero-content">
-    <div class="hero-badge">Handcrafted in Oklahoma</div>
+    <div class="hero-badge">Handcrafted in Oklahoma · Built on Faith</div>
     <h1>Built to<br><em>last a lifetime.</em></h1>
-    <p class="hero-sub">Every chair is cut, shaped, and finished by hand in Sulphur, Oklahoma. Solid wood. Deep stain. Rockers that move like they were made for your porch — because they were.</p>
+    <p class="hero-sub">Every chair is cut, shaped, and finished by hand in Sulphur, Oklahoma. Solid wood. Deep stain. Made with purpose — and prayer. Rockers that move like they were made for your porch — because they were.</p>
     <div class="hero-actions">
       <a href="https://buy.stripe.com/cNi7sE5zq6Yc7Pk4zNfrW03" class="btn-primary" target="_blank">Order Your Chair — $750</a>
       <a href="#product" class="btn-outline">See Details</a>
@@ -1094,6 +1230,7 @@
     <p class="story-body">Every Adirondack rocker that leaves our shop in Sulphur, Oklahoma is built from solid wood, cut by hand, shaped on the same equipment my family has used for years. No shortcuts. No prefab parts. No assembly line.</p>
     <p class="story-body">We pick the wood for grain and character. We sand it by hand until it's smooth to the touch. Every stain is applied in multiple coats and buffed out before it ships. The result is a chair that gets better-looking every year it sits on your porch.</p>
     <p class="story-body">Each chair is made to order. You pick the stain. We build it, finish it, and ship it directly to your door — anywhere in the country.</p>
+    <p class="story-body" style="color:var(--oak-dark); font-style:italic; border-left:3px solid var(--oak-light); padding-left:16px; margin-top:4px;">We don't just build chairs. We build things that last — because that's what God calls us to do with the work of our hands.</p>
   </div>
 </section>
 
@@ -1177,11 +1314,217 @@
   </div>
 </section>
 
+<!-- STAIN COLORS -->
+<section class="stains-section" id="stains">
+  <div class="section-label">Stain Colors</div>
+  <h2 class="section-title">Choose your finish</h2>
+  <p class="section-sub">Every chair is hand-stained in multiple coats. Pick a color below — or describe your own and we'll match it.</p>
+  <div class="stains-grid">
+    <div class="stain-card active" onclick="selectStain(this)">
+      <div class="stain-swatch" style="background: linear-gradient(135deg, #d4a24c, #b5832a);"></div>
+      <div class="stain-name">Honey Oak</div>
+      <div class="stain-desc">Warm, natural look. Lets the wood grain show through. Our most popular.</div>
+    </div>
+    <div class="stain-card" onclick="selectStain(this)">
+      <div class="stain-swatch" style="background: linear-gradient(135deg, #8b5c3a, #6b3d20);"></div>
+      <div class="stain-name">Cedar Red</div>
+      <div class="stain-desc">Rich reddish-brown. Deep and warm. Looks stunning on a porch.</div>
+    </div>
+    <div class="stain-card" onclick="selectStain(this)">
+      <div class="stain-swatch" style="background: linear-gradient(135deg, #6b3d2e, #4a2415);"></div>
+      <div class="stain-name">Medium Walnut</div>
+      <div class="stain-desc">Classic medium brown. Versatile — matches almost any outdoor space.</div>
+    </div>
+    <div class="stain-card" onclick="selectStain(this)">
+      <div class="stain-swatch" style="background: linear-gradient(135deg, #2e1a0e, #1a0d05);"></div>
+      <div class="stain-name">Dark Walnut</div>
+      <div class="stain-desc">Deep, bold, dramatic. Ages beautifully outdoors over time.</div>
+    </div>
+    <div class="stain-card" onclick="selectStain(this)">
+      <div class="stain-swatch" style="background: linear-gradient(135deg, #8a8278, #6b6460);"></div>
+      <div class="stain-name">Weathered Gray</div>
+      <div class="stain-desc">Modern farmhouse look. Soft, neutral, pairs with any color palette.</div>
+    </div>
+    <div class="stain-card" onclick="selectStain(this)">
+      <div class="stain-swatch" style="background: linear-gradient(135deg, #2a2018, #0f0a06); border: 1px solid #333;"></div>
+      <div class="stain-name">Ebony</div>
+      <div class="stain-desc">Near-black finish for a bold statement piece. Striking and timeless.</div>
+    </div>
+  </div>
+  <p style="text-align:center; font-size:13px; color:var(--text-muted); margin-top:24px;">Don't see what you want? <a href="#" onclick="openModal();return false;" style="color:var(--oak); font-weight:600;">Text or message us</a> — we'll match it.</p>
+</section>
+
+<!-- SCHEMATICS -->
+<section class="schematics-section" id="schematics">
+  <div class="section-label">Technical Detail</div>
+  <h2 class="section-title">Built to spec. Every time.</h2>
+  <p class="section-sub">The same dimensions, joinery, and finish — every chair, every order. No variation, no cutting corners.</p>
+  <div class="schematics-wrap">
+    <div class="schematic-box">
+      <div class="schematic-label">FRONT VIEW</div>
+      <svg viewBox="0 0 300 360" xmlns="http://www.w3.org/2000/svg" class="schematic-svg">
+        <!-- Fan back slats: 7 slats radiating from bottom center -->
+        <line x1="150" y1="220" x2="90" y2="55" stroke="#5a3a10" stroke-width="10" stroke-linecap="round"/>
+        <line x1="150" y1="220" x2="108" y2="48" stroke="#5a3a10" stroke-width="10" stroke-linecap="round"/>
+        <line x1="150" y1="220" x2="126" y2="44" stroke="#5a3a10" stroke-width="10" stroke-linecap="round"/>
+        <line x1="150" y1="220" x2="150" y2="43" stroke="#5a3a10" stroke-width="10" stroke-linecap="round"/>
+        <line x1="150" y1="220" x2="174" y2="44" stroke="#5a3a10" stroke-width="10" stroke-linecap="round"/>
+        <line x1="150" y1="220" x2="192" y2="48" stroke="#5a3a10" stroke-width="10" stroke-linecap="round"/>
+        <line x1="150" y1="220" x2="210" y2="55" stroke="#5a3a10" stroke-width="10" stroke-linecap="round"/>
+        <!-- Top curve connecting slat tips -->
+        <path d="M86 62 Q150 36 214 62" stroke="#5a3a10" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <!-- Back bottom rail -->
+        <rect x="68" y="210" width="164" height="14" rx="4" fill="#b07840" stroke="#5a3a10" stroke-width="2"/>
+        <!-- Wide armrests -->
+        <rect x="38" y="186" width="50" height="14" rx="5" fill="#c8955a" stroke="#5a3a10" stroke-width="2.5"/>
+        <rect x="212" y="186" width="50" height="14" rx="5" fill="#c8955a" stroke="#5a3a10" stroke-width="2.5"/>
+        <!-- Arm supports (blocky) -->
+        <rect x="44" y="200" width="28" height="36" rx="3" fill="#b07840" stroke="#5a3a10" stroke-width="2"/>
+        <rect x="228" y="200" width="28" height="36" rx="3" fill="#b07840" stroke="#5a3a10" stroke-width="2"/>
+        <!-- Seat slats: 4 slats -->
+        <rect x="68" y="236" width="164" height="10" rx="3" fill="#c8955a" stroke="#5a3a10" stroke-width="1.5"/>
+        <rect x="68" y="250" width="164" height="10" rx="3" fill="#c8955a" stroke="#5a3a10" stroke-width="1.5"/>
+        <rect x="68" y="264" width="164" height="10" rx="3" fill="#c8955a" stroke="#5a3a10" stroke-width="1.5"/>
+        <rect x="68" y="278" width="164" height="10" rx="3" fill="#b07840" stroke="#5a3a10" stroke-width="1.5"/>
+        <!-- Front legs (blocky) -->
+        <rect x="68" y="288" width="28" height="56" rx="2" fill="#b07840" stroke="#5a3a10" stroke-width="2"/>
+        <rect x="204" y="288" width="28" height="56" rx="2" fill="#b07840" stroke="#5a3a10" stroke-width="2"/>
+        <!-- Rockers -->
+        <path d="M32 344 Q90 364 150 360 Q210 356 268 344" stroke="#5a3a10" stroke-width="8" fill="none" stroke-linecap="round"/>
+        <!-- Dim: seat width -->
+        <line x1="68" y1="320" x2="232" y2="320" stroke="#888" stroke-width="1" stroke-dasharray="4,3"/>
+        <line x1="68" y1="315" x2="68" y2="325" stroke="#888" stroke-width="1.5"/>
+        <line x1="232" y1="315" x2="232" y2="325" stroke="#888" stroke-width="1.5"/>
+        <text x="150" y="333" text-anchor="middle" font-size="11" fill="#666" font-family="Inter,Arial">22" seat width</text>
+        <!-- Dim: overall width -->
+        <line x1="38" y1="18" x2="262" y2="18" stroke="#888" stroke-width="1" stroke-dasharray="4,3"/>
+        <line x1="38" y1="13" x2="38" y2="23" stroke="#888" stroke-width="1.5"/>
+        <line x1="262" y1="13" x2="262" y2="23" stroke="#888" stroke-width="1.5"/>
+        <text x="150" y="12" text-anchor="middle" font-size="11" fill="#666" font-family="Inter,Arial">~31.5" overall</text>
+      </svg>
+    </div>
+    <div class="schematic-box">
+      <div class="schematic-label">SIDE VIEW</div>
+      <svg viewBox="0 0 280 380" xmlns="http://www.w3.org/2000/svg" class="schematic-svg">
+        <!-- Rocker -->
+        <path d="M20 340 Q70 362 150 355 Q210 350 260 335" stroke="#5a3a10" stroke-width="8" fill="none" stroke-linecap="round"/>
+        <!-- Back leg (angled) -->
+        <line x1="58" y1="338" x2="75" y2="170" stroke="#5a3a10" stroke-width="12" stroke-linecap="round"/>
+        <!-- Front leg (vertical, blocky) -->
+        <rect x="152" y="276" width="26" height="62" rx="2" fill="#b07840" stroke="#5a3a10" stroke-width="2"/>
+        <!-- Seat -->
+        <rect x="72" y="258" width="108" height="12" rx="3" fill="#c8955a" stroke="#5a3a10" stroke-width="1.5"/>
+        <rect x="72" y="273" width="108" height="12" rx="3" fill="#c8955a" stroke="#5a3a10" stroke-width="1.5"/>
+        <!-- Armrest (wide, flat) -->
+        <rect x="58" y="230" width="110" height="14" rx="6" fill="#c8955a" stroke="#5a3a10" stroke-width="2.5"/>
+        <!-- Arm support block -->
+        <rect x="152" y="244" width="22" height="28" rx="2" fill="#b07840" stroke="#5a3a10" stroke-width="2"/>
+        <!-- Back slats (fan, side view shows as single wide plank) -->
+        <rect x="60" y="70" width="16" height="168" rx="5" fill="#c8955a" stroke="#5a3a10" stroke-width="2"/>
+        <rect x="82" y="56" width="16" height="178" rx="5" fill="#c8955a" stroke="#5a3a10" stroke-width="2"/>
+        <!-- Back top curve -->
+        <path d="M56 76 Q80 42 100 56" stroke="#5a3a10" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <!-- Back bottom rail -->
+        <rect x="55" y="228" width="112" height="14" rx="3" fill="#b07840" stroke="#5a3a10" stroke-width="2"/>
+        <!-- Dim: seat height -->
+        <line x1="220" y1="258" x2="220" y2="340" stroke="#888" stroke-width="1" stroke-dasharray="4,3"/>
+        <line x1="215" y1="258" x2="225" y2="258" stroke="#888" stroke-width="1.5"/>
+        <line x1="215" y1="340" x2="225" y2="340" stroke="#888" stroke-width="1.5"/>
+        <text x="236" y="305" text-anchor="middle" font-size="11" fill="#666" font-family="Inter,Arial" transform="rotate(90,236,305)">16.5" h</text>
+        <!-- Dim: overall height -->
+        <line x1="10" y1="56" x2="10" y2="340" stroke="#888" stroke-width="1" stroke-dasharray="4,3"/>
+        <line x1="5" y1="56" x2="15" y2="56" stroke="#888" stroke-width="1.5"/>
+        <line x1="5" y1="340" x2="15" y2="340" stroke="#888" stroke-width="1.5"/>
+        <text x="4" y="205" text-anchor="middle" font-size="11" fill="#666" font-family="Inter,Arial" transform="rotate(-90,4,205)">~43" tall</text>
+        <!-- Dim: seat depth -->
+        <line x1="72" y1="310" x2="178" y2="310" stroke="#888" stroke-width="1" stroke-dasharray="4,3"/>
+        <line x1="72" y1="305" x2="72" y2="315" stroke="#888" stroke-width="1.5"/>
+        <line x1="178" y1="305" x2="178" y2="315" stroke="#888" stroke-width="1.5"/>
+        <text x="125" y="325" text-anchor="middle" font-size="11" fill="#666" font-family="Inter,Arial">23" depth</text>
+      </svg>
+    </div>
+    <div class="schematic-specs">
+      <div class="sch-spec-title">Dimensions</div>
+      <div class="sch-row"><span>Seat Width</span><span>22"</span></div>
+      <div class="sch-row"><span>Seat Depth</span><span>23"</span></div>
+      <div class="sch-row"><span>Seat Height</span><span>~16.5"</span></div>
+      <div class="sch-row"><span>Back Height</span><span>~43" total</span></div>
+      <div class="sch-row"><span>Overall Width</span><span>~31.5"</span></div>
+      <div class="sch-row"><span>Rocker Length</span><span>~30"</span></div>
+      <div class="sch-spec-title" style="margin-top:20px;">Construction</div>
+      <div class="sch-row"><span>Back Slats</span><span>7 fan-cut</span></div>
+      <div class="sch-row"><span>Seat Slats</span><span>4 boards</span></div>
+      <div class="sch-row"><span>Joinery</span><span>Screwed & glued</span></div>
+      <div class="sch-row"><span>Material</span><span>Solid wood</span></div>
+      <div class="sch-row"><span>Finish</span><span>3-coat hand stain</span></div>
+      <div class="sch-row"><span>Est. Weight</span><span>~45 lbs</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ADD-ONS -->
+<section class="addons-section" id="addons">
+  <div class="section-label">Make It Yours</div>
+  <h2 class="section-title">Upgrades & Add-Ons</h2>
+  <p class="section-sub">Every chair starts at $750. Add any of the below when you order — just mention it in the notes at checkout.</p>
+  <div class="addons-grid">
+    <div class="addon-card">
+      <div class="addon-icon">☕</div>
+      <div class="addon-name">Built-In Cup Holder</div>
+      <div class="addon-price">+ $50</div>
+      <div class="addon-desc">Cut directly into one armrest. Holds up to a 32oz tumbler. Clean, flush, no wobble. Never lose your coffee again.</div>
+    </div>
+    <div class="addon-card featured">
+      <div class="addon-badge">Most Popular</div>
+      <div class="addon-icon">✝️</div>
+      <div class="addon-name">Scripture Engraving</div>
+      <div class="addon-price">+ $75</div>
+      <div class="addon-desc">Your chosen verse, name, or initials hand-carved into the top back rail. A permanent reminder of what matters. Perfect for gifts.</div>
+    </div>
+    <div class="addon-card">
+      <div class="addon-icon">🌧️</div>
+      <div class="addon-name">Premium Weather Seal</div>
+      <div class="addon-price">+ $40</div>
+      <div class="addon-desc">3 additional coats of exterior-grade sealant applied over the stain. Doubles the outdoor lifespan. Recommended for year-round porch chairs.</div>
+    </div>
+    <div class="addon-card">
+      <div class="addon-icon">🪵</div>
+      <div class="addon-name">Matching Side Table</div>
+      <div class="addon-price">+ $350</div>
+      <div class="addon-desc">Built to match your chair — same wood, same stain, same craftsmanship. Round top, Adirondack-style legs. Completes the set.</div>
+    </div>
+    <div class="addon-card">
+      <div class="addon-icon">🪑</div>
+      <div class="addon-name">Two-Chair Set</div>
+      <div class="addon-price">$1,400 <span style="font-size:12px;color:var(--text-muted);font-weight:400;">save $100</span></div>
+      <div class="addon-desc">Two matching chairs, same stain, same build. Perfect for a porch, fire pit, or cabin. Built and shipped together.</div>
+    </div>
+    <div class="addon-card">
+      <div class="addon-icon">💌</div>
+      <div class="addon-name">Gift Packaging</div>
+      <div class="addon-price">+ $25</div>
+      <div class="addon-desc">Handwritten card, gift wrapping on the armrests and seat, and a note card with the chair's story. Makes an unforgettable gift.</div>
+    </div>
+  </div>
+  <p style="text-align:center; font-size:13px; color:var(--text-muted); margin-top:28px;">To add any upgrade, <a href="https://buy.stripe.com/cNi7sE5zq6Yc7Pk4zNfrW03" target="_blank" style="color:var(--oak); font-weight:600;">order your chair</a> and mention the add-on in the notes field at checkout. We'll confirm and adjust the total.</p>
+</section>
+
+<!-- FAITH STRIP -->
+<div style="background: var(--cream); padding: 0 80px; max-width: 100%;">
+  <div style="border-top: 1px solid rgba(181,131,42,0.2); border-bottom: 1px solid rgba(181,131,42,0.2); padding: 40px 0; display:flex; align-items:center; gap:40px; flex-wrap:wrap; justify-content:center;">
+    <div style="font-size:32px;">✝️</div>
+    <div style="max-width:680px;">
+      <p style="font-family:'Playfair Display',serif; font-size:19px; font-style:italic; color:var(--bark); line-height:1.6; margin-bottom:6px;">"Commit your work to the Lord, and your plans will be established."</p>
+      <p style="font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--oak);">— Proverbs 16:3</p>
+    </div>
+  </div>
+</div>
+
 <!-- PROCESS -->
 <section class="process" id="process">
   <div class="section-label">How It's Made</div>
   <h2 class="section-title">Four steps. One lifetime chair.</h2>
-  <p class="section-sub">Every chair follows the same process. No shortcuts, no exceptions.</p>
+  <p class="section-sub">Every chair follows the same process. No shortcuts, no exceptions. Whatever we do, we work at it with all our heart.</p>
   <div class="steps">
     <div class="step">
       <div class="step-num">01</div>
@@ -1236,7 +1579,7 @@
     </div>
     <div class="review-card">
       <div class="review-stars">★★★★★</div>
-      <p class="review-text">"Bought one as a Father's Day gift. He texted me a photo from the porch at 6am the next morning. That says everything. Lead time was accurate, communication was great, chair was perfect."</p>
+      <p class="review-text">"Bought one as a Father's Day gift with a Psalm 23 engraving on the back rail. He texted me a photo from the porch at 6am the next morning. That says everything. Lead time was accurate, communication was great, chair was perfect."</p>
       <div class="review-author">
         <div class="author-avatar">S</div>
         <div>
@@ -1292,7 +1635,7 @@
 <section class="order-cta">
   <div class="section-label">Ready to Order?</div>
   <h2 class="section-title">Your porch is waiting.</h2>
-  <p class="section-sub">Hand-built in Oklahoma. Shipped to your door. One chair, made exactly for you.</p>
+  <p class="section-sub">Hand-built in Oklahoma. Shipped to your door. Made exactly for you — with every ounce of craft and faith we have.</p>
   <div class="cta-actions">
     <a href="https://buy.stripe.com/cNi7sE5zq6Yc7Pk4zNfrW03" class="btn-white" target="_blank">Order Now — $750 · Secure Checkout</a>
     <a href="sms:9728347204" class="btn-ghost">📱 Text Us a Question</a>
@@ -1304,7 +1647,7 @@
 <footer>
   <div>
     <div class="footer-brand">Sulphur <span>Rocker</span></div>
-    <div class="footer-tagline">Handmade in Sulphur, Oklahoma since the beginning.</div>
+    <div class="footer-tagline">Handmade in Sulphur, Oklahoma. Built on faith.</div>
     <div style="font-size:12px; color: rgba(255,255,255,0.3); margin-top:6px; font-style:italic;">"Establish the work of our hands." — Ps. 90:17</div>
   </div>
   <div class="footer-contact">
@@ -1367,6 +1710,11 @@
 </div>
 
 <script>
+  function selectStain(el) {
+    document.querySelectorAll('.stain-card').forEach(c => c.classList.remove('active'));
+    el.classList.add('active');
+  }
+
   function setMainImg(src) {
     document.getElementById('gallery-main-img').src = src;
     document.querySelectorAll('.gallery-thumb').forEach(t => t.style.border = '');
