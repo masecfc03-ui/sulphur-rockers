@@ -308,6 +308,89 @@
     max-width: 560px;
   }
 
+  /* ── FIRE STORY ─────────────────────── */
+  .fire-story {
+    background: linear-gradient(160deg, #1a0d05 0%, #2c1f0e 40%, #1a0e04 100%);
+    padding: 110px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .fire-story::before {
+    content: '';
+    position: absolute;
+    bottom: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 300px;
+    background: radial-gradient(ellipse, rgba(181,90,10,0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .fire-story-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1060px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .fire-story-quote {
+    position: relative;
+    padding: 48px 40px;
+    border: 1px solid rgba(181,131,42,0.25);
+    border-radius: 4px;
+  }
+
+  .fire-story-quote::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(181,131,42,0.04);
+    border-radius: 4px;
+  }
+
+  .fire-quote-mark {
+    font-family: 'Playfair Display', serif;
+    font-size: 120px;
+    color: var(--oak);
+    opacity: 0.3;
+    line-height: 0.6;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .fire-story-quote blockquote {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-style: italic;
+    color: white;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .fire-quote-attr {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--oak-light);
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+  }
+
+  @media (max-width: 900px) {
+    .fire-story { padding: 72px 24px; }
+    .fire-story-inner { grid-template-columns: 1fr; gap: 40px; }
+    .fire-story-quote { padding: 32px 24px; }
+    .fire-story-quote blockquote { font-size: 22px; }
+  }
+
   /* ── SCRIPTURE BANNER ──────────────── */
   .scripture-banner {
     background: var(--oak-dark);
@@ -1539,6 +1622,24 @@
   <div class="trust-divider"></div>
   <div class="trust-item"><span class="trust-icon">⏱️</span> 3–6 month lead time</div>
 </div>
+
+<!-- FIRE STORY -->
+<section class="fire-story">
+  <div class="fire-story-inner">
+    <div class="fire-story-text">
+      <div class="section-label" style="color:var(--oak-light);">How It Travels</div>
+      <h2 style="font-family:'Playfair Display',serif; font-size:42px; font-weight:700; color:white; line-height:1.15; margin-bottom:24px;">The story gets told<br><em>around the fire.</em></h2>
+      <p style="font-size:17px; line-height:1.8; color:rgba(255,255,255,0.75); margin-bottom:20px;">Nobody sees an ad. Nobody clicks a link. Someone sits down at a fire pit on a ranch in Texas, settles into the chair, feels the difference — and says <em>"these are nice. Where did you get these?"</em></p>
+      <p style="font-size:17px; line-height:1.8; color:rgba(255,255,255,0.75); margin-bottom:20px;">And the answer is simple: <em>"These guys in Oklahoma. You have to talk to them."</em></p>
+      <p style="font-size:17px; line-height:1.8; color:rgba(255,255,255,0.75);">That conversation — around a fire, where memories are made — is how every commission starts. The chair earns the story. The story earns the next chair.</p>
+    </div>
+    <div class="fire-story-quote">
+      <div class="fire-quote-mark">"</div>
+      <blockquote>These guys in Oklahoma — you have to talk to them.</blockquote>
+      <div class="fire-quote-attr">— How every commission starts</div>
+    </div>
+  </div>
+</section>
 
 <!-- SCRIPTURE BANNER -->
 <div class="scripture-banner">
