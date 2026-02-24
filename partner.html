@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sulphur Rocker — Partner Overview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --oak: #b5832a;
+    --oak-light: #d4a855;
+    --oak-dark: #7a5418;
+    --bark: #2c1f0e;
+    --cream: #faf7f2;
+    --warm-white: #fff9f2;
+    --text: #1a1209;
+    --text-muted: #6b5740;
+    --green: #2d6a4f;
+    --green-light: #e8f5ee;
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 48px 32px 80px;
+  }
+
+  /* Header */
+  .header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 52px;
+    padding-bottom: 32px;
+    border-bottom: 2px solid rgba(181,131,42,0.25);
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .brand { font-family: 'Playfair Display', serif; }
+  .brand h1 { font-size: 28px; color: var(--bark); }
+  .brand h1 span { color: var(--oak); }
+  .brand p { font-size: 13px; color: var(--text-muted); margin-top: 4px; letter-spacing: 0.5px; }
+
+  .doc-label {
+    background: var(--oak);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    border-radius: 4px;
+  }
+
+  /* Section */
+  .section { margin-bottom: 56px; }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--bark);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(181,131,42,0.2);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* KPI cards */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 8px;
+  }
+
+  .kpi {
+    background: white;
+    border-radius: 6px;
+    padding: 20px;
+    border-left: 4px solid var(--oak);
+    box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+  }
+
+  .kpi-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+
+  .kpi-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--bark);
+    line-height: 1;
+  }
+
+  .kpi-sub {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 4px;
+  }
+
+  /* Margin breakdown */
+  .breakdown {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+  }
+
+  .breakdown-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 24px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    font-size: 14px;
+  }
+
+  .breakdown-row:last-child { border-bottom: none; }
+  .breakdown-row.total {
+    background: var(--bark);
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+  }
+
+  .breakdown-row.total .bd-val { color: var(--oak-light); }
+  .breakdown-row.subtotal { background: rgba(181,131,42,0.08); font-weight: 600; }
+  .bd-label { color: var(--text-muted); }
+  .breakdown-row.total .bd-label { color: rgba(255,255,255,0.8); }
+  .breakdown-row.subtotal .bd-label { color: var(--bark); }
+  .bd-val { font-weight: 600; color: var(--bark); }
+  .bd-val.neg { color: #c0392b; }
+  .bd-val.pos { color: var(--green); }
+
+  /* Revenue scenarios */
+  .scenarios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .scenario {
+    background: white;
+    border-radius: 8px;
+    padding: 28px 24px;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+    text-align: center;
+    border-top: 4px solid var(--oak-light);
+    transition: transform 0.15s;
+  }
+
+  .scenario.highlight {
+    border-top-color: var(--bark);
+    background: var(--bark);
+    color: white;
+    transform: scale(1.03);
+  }
+
+  .scenario-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--oak);
+    margin-bottom: 8px;
+  }
+
+  .scenario.highlight .scenario-label { color: var(--oak-light); }
+
+  .scenario-chairs {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--bark);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .scenario.highlight .scenario-chairs { color: white; }
+
+  .scenario-chairs-label {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+  }
+
+  .scenario.highlight .scenario-chairs-label { color: rgba(255,255,255,0.6); }
+
+  .scenario-line {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .scenario.highlight .scenario-line { border-bottom-color: rgba(255,255,255,0.1); }
+
+  .scenario-line:last-of-type { border-bottom: none; margin-bottom: 16px; }
+  .s-key { color: var(--text-muted); }
+  .scenario.highlight .s-key { color: rgba(255,255,255,0.6); }
+  .s-val { font-weight: 600; color: var(--bark); }
+  .scenario.highlight .s-val { color: white; }
+
+  .scenario-profit {
+    background: var(--green-light);
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--green);
+    margin-top: 4px;
+  }
+
+  .scenario.highlight .scenario-profit {
+    background: rgba(255,255,255,0.15);
+    color: var(--oak-light);
+  }
+
+  /* Ops flow */
+  .ops-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .ops-step {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    position: relative;
+  }
+
+  .ops-step::before {
+    content: '';
+    position: absolute;
+    left: 19px;
+    top: 40px;
+    bottom: -20px;
+    width: 2px;
+    background: rgba(181,131,42,0.2);
+  }
+
+  .ops-step:last-child::before { display: none; }
+
+  .ops-num {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--oak);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .ops-content {
+    padding: 8px 0 32px;
+  }
+
+  .ops-title {
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--bark);
+    margin-bottom: 4px;
+  }
+
+  .ops-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .ops-tag {
+    display: inline-block;
+    background: rgba(181,131,42,0.12);
+    color: var(--oak-dark);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 3px;
+    margin-top: 4px;
+    letter-spacing: 0.5px;
+  }
+
+  /* Why now */
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .why-card {
+    background: white;
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+  }
+
+  .why-icon { font-size: 28px; margin-bottom: 10px; display: block; }
+  .why-title { font-weight: 700; font-size: 15px; color: var(--bark); margin-bottom: 6px; }
+  .why-desc { font-size: 13px; color: var(--text-muted); line-height: 1.65; }
+
+  /* Tech stack */
+  .tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .tech-badge {
+    background: white;
+    border: 1px solid rgba(181,131,42,0.3);
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--bark);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .tech-badge span { font-size: 16px; }
+
+  /* Scripture */
+  .scripture {
+    background: var(--oak-dark);
+    color: white;
+    padding: 28px 32px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 52px;
+  }
+
+  .scripture p {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-style: italic;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 10px;
+  }
+
+  .scripture span {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--oak-light);
+    font-weight: 600;
+  }
+
+  /* Live link */
+  .live-box {
+    background: white;
+    border: 2px solid var(--oak);
+    border-radius: 8px;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+  }
+
+  .live-dot {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--green);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .live-dot::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--green);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  .live-url {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--bark);
+    text-decoration: none;
+  }
+
+  .live-url:hover { color: var(--oak); }
+
+  .live-qr img { width: 80px; height: 80px; border-radius: 4px; }
+
+  /* Responsive */
+  @media (max-width: 700px) {
+    body { padding: 24px 16px 60px; }
+    .kpi-grid { grid-template-columns: 1fr 1fr; }
+    .scenarios { grid-template-columns: 1fr; }
+    .scenario.highlight { transform: none; }
+    .why-grid { grid-template-columns: 1fr; }
+    .live-box { flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <div class="brand">
+    <h1>Sulphur <span>Rocker</span></h1>
+    <p>Partner Business Overview · February 2026 · Private</p>
+  </div>
+  <div class="doc-label">Partner Deck</div>
+</div>
+
+<!-- Live site -->
+<div class="live-box">
+  <div>
+    <div class="live-dot">Live Now</div>
+    <a href="https://masecfc03-ui.github.io/sulphur-rockers/" target="_blank" class="live-url">sulphurrocker.github.io</a>
+    <div style="font-size:12px; color:var(--text-muted); margin-top:4px;">Stripe payments wired · Ships anywhere · Orders open</div>
+  </div>
+  <div class="live-qr">
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://masecfc03-ui.github.io/sulphur-rockers/&color=2c1f0e&bgcolor=faf7f2" alt="QR Code">
+  </div>
+</div>
+
+<!-- KPIs -->
+<div class="section">
+  <div class="section-title">📊 The Numbers</div>
+  <div class="kpi-grid">
+    <div class="kpi">
+      <div class="kpi-label">Sale Price</div>
+      <div class="kpi-value">$750</div>
+      <div class="kpi-sub">per chair, free shipping</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Est. Profit/Chair</div>
+      <div class="kpi-value">$450</div>
+      <div class="kpi-sub">~60% gross margin</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Breakeven</div>
+      <div class="kpi-value">2</div>
+      <div class="kpi-sub">chairs/month covers ops</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Market Size</div>
+      <div class="kpi-value">$3B+</div>
+      <div class="kpi-sub">outdoor furniture US market</div>
+    </div>
+  </div>
+</div>
+
+<!-- Margin Breakdown -->
+<div class="section">
+  <div class="section-title">💰 Per-Chair Margin</div>
+  <div class="breakdown">
+    <div class="breakdown-row">
+      <span class="bd-label">Sale Price</span>
+      <span class="bd-val pos">$750.00</span>
+    </div>
+    <div class="breakdown-row">
+      <span class="bd-label">Materials (lumber, hardware, stain)</span>
+      <span class="bd-val neg">− $150</span>
+    </div>
+    <div class="breakdown-row">
+      <span class="bd-label">Shipping (freight, packaging)</span>
+      <span class="bd-val neg">− $100</span>
+    </div>
+    <div class="breakdown-row">
+      <span class="bd-label">Stripe processing fee (~3%)</span>
+      <span class="bd-val neg">− $23</span>
+    </div>
+    <div class="breakdown-row subtotal">
+      <span class="bd-label">Gross Profit Per Chair</span>
+      <span class="bd-val pos">$477</span>
+    </div>
+    <div class="breakdown-row total">
+      <span class="bd-label">Gross Margin</span>
+      <span class="bd-val">~64%</span>
+    </div>
+  </div>
+  <p style="font-size:12px; color:var(--text-muted); margin-top:10px;">* Material/shipping costs estimated — update with actuals to fine-tune</p>
+</div>
+
+<!-- Revenue Scenarios -->
+<div class="section">
+  <div class="section-title">📈 Revenue Scenarios</div>
+  <div class="scenarios">
+    <div class="scenario">
+      <div class="scenario-label">Getting Started</div>
+      <div class="scenario-chairs">4</div>
+      <div class="scenario-chairs-label">chairs/month</div>
+      <div class="scenario-line"><span class="s-key">Revenue</span><span class="s-val">$3,000/mo</span></div>
+      <div class="scenario-line"><span class="s-key">Costs</span><span class="s-val">$1,092/mo</span></div>
+      <div class="scenario-line"><span class="s-key">Annual Rev</span><span class="s-val">$36,000</span></div>
+      <div class="scenario-profit">$1,908/mo profit</div>
+    </div>
+    <div class="scenario highlight">
+      <div class="scenario-label">Sweet Spot</div>
+      <div class="scenario-chairs">8</div>
+      <div class="scenario-chairs-label">chairs/month</div>
+      <div class="scenario-line"><span class="s-key">Revenue</span><span class="s-val">$6,000/mo</span></div>
+      <div class="scenario-line"><span class="s-key">Costs</span><span class="s-val">$2,184/mo</span></div>
+      <div class="scenario-line"><span class="s-key">Annual Rev</span><span class="s-val">$72,000</span></div>
+      <div class="scenario-profit">$3,816/mo profit</div>
+    </div>
+    <div class="scenario">
+      <div class="scenario-label">Scaled Up</div>
+      <div class="scenario-chairs">20</div>
+      <div class="scenario-chairs-label">chairs/month</div>
+      <div class="scenario-line"><span class="s-key">Revenue</span><span class="s-val">$15,000/mo</span></div>
+      <div class="scenario-line"><span class="s-key">Costs</span><span class="s-val">$5,460/mo</span></div>
+      <div class="scenario-line"><span class="s-key">Annual Rev</span><span class="s-val">$180,000</span></div>
+      <div class="scenario-profit">$9,540/mo profit</div>
+    </div>
+  </div>
+</div>
+
+<!-- Ops Flow -->
+<div class="section">
+  <div class="section-title">⚙️ How an Order Works</div>
+  <div class="ops-flow">
+    <div class="ops-step">
+      <div class="ops-num">1</div>
+      <div class="ops-content">
+        <div class="ops-title">Customer finds us</div>
+        <div class="ops-desc">Via the website, social media, word of mouth, or a shared QR code. Site is live 24/7 — orders come in while we sleep.</div>
+        <div class="ops-tag">Automated</div>
+      </div>
+    </div>
+    <div class="ops-step">
+      <div class="ops-num">2</div>
+      <div class="ops-content">
+        <div class="ops-title">Customer pays through Stripe</div>
+        <div class="ops-desc">$750 collected securely at checkout. Customer enters stain preference and any notes. We get an instant email notification.</div>
+        <div class="ops-tag">Automated · Full payment upfront</div>
+      </div>
+    </div>
+    <div class="ops-step">
+      <div class="ops-num">3</div>
+      <div class="ops-content">
+        <div class="ops-title">We confirm & start building</div>
+        <div class="ops-desc">Text or email the customer within 24 hours to confirm stain and shipping address. Add to the build queue.</div>
+        <div class="ops-tag">~5 min of admin</div>
+      </div>
+    </div>
+    <div class="ops-step">
+      <div class="ops-num">4</div>
+      <div class="ops-content">
+        <div class="ops-title">Build & finish</div>
+        <div class="ops-desc">Build the chair over 4–8 weeks alongside the current queue. Hand-stain, buff, inspect.</div>
+        <div class="ops-tag">The craft</div>
+      </div>
+    </div>
+    <div class="ops-step">
+      <div class="ops-num">5</div>
+      <div class="ops-content">
+        <div class="ops-title">Pack & ship</div>
+        <div class="ops-desc">Carefully packed, shipped directly to the customer's door anywhere in the US. Share tracking link.</div>
+        <div class="ops-tag">~$100 freight cost, included in price</div>
+      </div>
+    </div>
+    <div class="ops-step">
+      <div class="ops-num">6</div>
+      <div class="ops-content">
+        <div class="ops-title">Customer is thrilled → they share it</div>
+        <div class="ops-desc">Every happy customer is a marketing asset. Ask for a photo, get a review. Word of mouth is how this scales.</div>
+        <div class="ops-tag">Free marketing</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Why Now -->
+<div class="section">
+  <div class="section-title">🚀 Why This Works</div>
+  <div class="why-grid">
+    <div class="why-card">
+      <span class="why-icon">🏆</span>
+      <div class="why-title">Premium product in a commodity market</div>
+      <div class="why-desc">Big box Adirondacks fall apart in 2–3 years. There's no middle tier — it's $99 junk or $2,000+ designer furniture. We own the $750 sweet spot.</div>
+    </div>
+    <div class="why-card">
+      <span class="why-icon">📦</span>
+      <div class="why-title">No inventory risk</div>
+      <div class="why-desc">Every chair is paid for before we build it. Full payment upfront through Stripe. We never hold finished inventory or carry debt on materials.</div>
+    </div>
+    <div class="why-card">
+      <span class="why-icon">🌐</span>
+      <div class="why-title">National market, not local</div>
+      <div class="why-desc">We're not limited to Sulphur, OK. We ship everywhere. That's 330 million potential customers, not 5,000 locals.</div>
+    </div>
+    <div class="why-card">
+      <span class="why-icon">📱</span>
+      <div class="why-title">Sales infrastructure is built</div>
+      <div class="why-desc">Live website, Stripe checkout, QR code, order flow — all live today. We don't need to sell in person. The site sells for us.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Tech Stack -->
+<div class="section">
+  <div class="section-title">🛠️ What's Already Built</div>
+  <div class="tech-list">
+    <div class="tech-badge"><span>🌐</span> Live website</div>
+    <div class="tech-badge"><span>💳</span> Stripe checkout (live mode)</div>
+    <div class="tech-badge"><span>📱</span> Mobile-optimized</div>
+    <div class="tech-badge"><span>📦</span> Adjustable quantity at checkout</div>
+    <div class="tech-badge"><span>📸</span> Real product photos</div>
+    <div class="tech-badge"><span>✉️</span> Order notifications via email</div>
+    <div class="tech-badge"><span>📋</span> FAQ + full product spec</div>
+    <div class="tech-badge"><span>✝️</span> Built on faith</div>
+  </div>
+</div>
+
+<!-- Scripture -->
+<div class="scripture">
+  <p>"May the favor of the Lord our God rest on us; establish the work of our hands for us — yes, establish the work of our hands."</p>
+  <span>— Psalm 90:17</span>
+</div>
+
+</body>
+</html>
