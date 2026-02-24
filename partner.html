@@ -433,9 +433,134 @@
     .why-grid { grid-template-columns: 1fr; }
     .live-box { flex-direction: column; text-align: center; }
   }
+  /* ── PASSCODE GATE ── */
+  .gate {
+    position: fixed;
+    inset: 0;
+    background: var(--bark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .gate-inner {
+    text-align: center;
+    padding: 48px 40px;
+    background: var(--cream);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 380px;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.4);
+  }
+
+  .gate-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--bark);
+    margin-bottom: 4px;
+  }
+
+  .gate-brand span { color: var(--oak); }
+
+  .gate-sub {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 32px;
+    letter-spacing: 0.5px;
+  }
+
+  .gate-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    text-align: left;
+  }
+
+  .gate-input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: 6px;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--bark);
+    background: white;
+    outline: none;
+    transition: border-color 0.2s;
+    margin-bottom: 14px;
+  }
+
+  .gate-input:focus { border-color: var(--oak); }
+  .gate-input.error { border-color: #c0392b; animation: shake 0.3s; }
+
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-6px); }
+    75% { transform: translateX(6px); }
+  }
+
+  .gate-btn {
+    width: 100%;
+    padding: 14px;
+    background: var(--bark);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 1px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background 0.2s;
+  }
+
+  .gate-btn:hover { background: var(--oak-dark); }
+
+  .gate-error {
+    font-size: 13px;
+    color: #c0392b;
+    margin-top: 10px;
+    min-height: 18px;
+    font-weight: 500;
+  }
+
+  body.locked { overflow: hidden; }
 </style>
 </head>
-<body>
+<body class="locked">
+
+<!-- PASSCODE GATE -->
+<div class="gate" id="gate">
+  <div class="gate-inner">
+    <div class="gate-brand">Sulphur <span>Rocker</span></div>
+    <div class="gate-sub">Partner Access Only</div>
+    <div class="gate-label">Enter Passcode</div>
+    <input
+      class="gate-input"
+      id="gate-input"
+      type="password"
+      maxlength="12"
+      placeholder="· · · · · ·"
+      autocomplete="off"
+      onkeydown="if(event.key==='Enter') checkCode()"
+    >
+    <button class="gate-btn" onclick="checkCode()">Unlock →</button>
+    <div class="gate-error" id="gate-error"></div>
+  </div>
+</div>
+
 
 <!-- Header -->
 <div class="header">
@@ -654,5 +779,39 @@
   <span>— Psalm 90:17</span>
 </div>
 
+<script>
+  const PASSCODE = 'ROCKER';
+
+  // Auto-unlock if already authenticated this session
+  if (sessionStorage.getItem('sr_auth') === '1') unlock(false);
+
+  function checkCode() {
+    const val = document.getElementById('gate-input').value.trim().toUpperCase();
+    const input = document.getElementById('gate-input');
+    const err = document.getElementById('gate-error');
+    if (val === PASSCODE) {
+      sessionStorage.setItem('sr_auth', '1');
+      unlock(true);
+    } else {
+      input.classList.add('error');
+      err.textContent = 'Incorrect passcode. Try again.';
+      setTimeout(() => input.classList.remove('error'), 400);
+      input.value = '';
+      input.focus();
+    }
+  }
+
+  function unlock(animate) {
+    const gate = document.getElementById('gate');
+    document.body.classList.remove('locked');
+    if (animate) {
+      gate.style.transition = 'opacity 0.4s';
+      gate.style.opacity = '0';
+      setTimeout(() => gate.remove(), 400);
+    } else {
+      gate.remove();
+    }
+  }
+</script>
 </body>
 </html>
