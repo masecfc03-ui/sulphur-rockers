@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mathis Woodworks — Handmade Adirondack Rocking Chairs</title>
+<meta name="description" content="Handcrafted Adirondack rocking chairs built to last a lifetime. Made by hand in Sulphur, Oklahoma. $750. Ships anywhere.">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --oak: #b5832a;
+    --oak-light: #d4a855;
+    --oak-dark: #7a5418;
+    --bark: #2c1f0e;
+    --cream: #faf7f2;
+    --warm-white: #fff9f2;
+    --text: #1a1209;
+    --text-muted: #6b5740;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ────────────────────────────── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 20px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(250, 247, 242, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(181, 131, 42, 0.15);
+  }
+
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--bark);
+    text-decoration: none;
+    letter-spacing: 0.5px;
+  }
+
+  .nav-logo span { color: var(--oak); }
+
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--oak); }
+
+  .nav-cta {
+    background: var(--oak);
+    color: white !important;
+    padding: 10px 22px;
+    border-radius: 4px;
+    font-size: 12px !important;
+    letter-spacing: 1.5px;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--oak-dark) !important; color: white !important; }
+
+  /* ── HERO ───────────────────────────── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 80px;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 64px 80px 80px;
+    background: var(--warm-white);
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--oak);
+    margin-bottom: 24px;
+  }
+
+  .hero-badge::before {
+    content: '';
+    width: 24px;
+    height: 2px;
+    background: var(--oak);
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 58px;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--bark);
+    margin-bottom: 24px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--oak);
+  }
+
+  .hero-sub {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+    max-width: 420px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--bark);
+    color: white;
+    padding: 16px 36px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: background 0.2s, transform 0.1s;
+    display: inline-block;
+  }
+
+  .btn-primary:hover { background: var(--oak-dark); transform: translateY(-1px); }
+
+  .btn-outline {
+    color: var(--bark);
+    padding: 16px 32px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    border: 1.5px solid var(--bark);
+    transition: all 0.2s;
+    display: inline-block;
+  }
+
+  .btn-outline:hover {
+    background: var(--bark);
+    color: white;
+  }
+
+  .hero-price {
+    margin-top: 32px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+
+  .price-tag {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--bark);
+  }
+
+  .price-label {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.4;
+  }
+
+  .hero-image {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #d4c4a8 0%, #c8a96e 30%, #9e7a3a 100%);
+    min-height: 600px;
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .hero-image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(160deg, #d4b896 0%, #b8945e 40%, #7a5830 100%);
+  }
+
+  /* Big decorative SVG chair illustration for placeholder */
+  .chair-illustration {
+    width: 380px;
+    height: 420px;
+    opacity: 0.9;
+  }
+
+  .hero-image-overlay {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 32px;
+    background: linear-gradient(to top, rgba(30,15,5,0.6), transparent);
+    color: white;
+  }
+
+  .hero-image-caption {
+    font-size: 13px;
+    letter-spacing: 1px;
+    opacity: 0.9;
+  }
+
+  /* ── TRUST BAR ──────────────────────── */
+  .trust-bar {
+    background: var(--bark);
+    color: white;
+    padding: 20px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+  }
+
+  .trust-icon {
+    font-size: 18px;
+  }
+
+  .trust-divider {
+    width: 1px;
+    height: 20px;
+    background: rgba(255,255,255,0.2);
+  }
+
+  /* ── SECTION SHARED ─────────────────── */
+  section { padding: 100px 80px; }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--oak);
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 44px;
+    font-weight: 700;
+    color: var(--bark);
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+
+  .section-sub {
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--text-muted);
+    max-width: 560px;
+  }
+
+  /* ── STORY ──────────────────────────── */
+  .story {
+    background: var(--warm-white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .story-images {
+    position: relative;
+    height: 520px;
+  }
+
+  .story-img-main {
+    position: absolute;
+    top: 0; left: 0;
+    width: 75%;
+    height: 80%;
+    border-radius: 4px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #c8a96e, #9e7a3a);
+  }
+
+  .story-img-secondary {
+    position: absolute;
+    bottom: 0; right: 0;
+    width: 55%;
+    height: 55%;
+    border-radius: 4px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #d4b896, #a07840);
+    border: 6px solid var(--cream);
+  }
+
+  .story-img-main img,
+  .story-img-secondary img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .img-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+  }
+
+  .story-badge {
+    position: absolute;
+    bottom: 40px;
+    left: -20px;
+    background: var(--oak);
+    color: white;
+    padding: 16px 24px;
+    border-radius: 4px;
+    z-index: 10;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  }
+
+  .story-badge .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+    display: block;
+    line-height: 1;
+  }
+
+  .story-badge .lbl {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    opacity: 0.9;
+  }
+
+  .story-text { padding-right: 20px; }
+
+  .story-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-style: italic;
+    color: var(--oak);
+    line-height: 1.5;
+    margin: 28px 0;
+    padding-left: 20px;
+    border-left: 3px solid var(--oak-light);
+  }
+
+  .story-body {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+  }
+
+  /* ── PRODUCT ────────────────────────── */
+  .product {
+    background: var(--cream);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .product-gallery {
+    position: relative;
+  }
+
+  .gallery-main {
+    width: 100%;
+    aspect-ratio: 4/5;
+    border-radius: 4px;
+    overflow: hidden;
+    background: linear-gradient(150deg, #e0c89a 0%, #b8945e 60%, #7a5418 100%);
+    margin-bottom: 12px;
+  }
+
+  .gallery-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .gallery-thumbs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .gallery-thumb {
+    aspect-ratio: 1;
+    border-radius: 4px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #d4b896, #a07840);
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+
+  .gallery-thumb:hover { opacity: 0.8; }
+  .gallery-thumb img { width: 100%; height: 100%; object-fit: cover; }
+
+  .product-details { padding-top: 8px; }
+
+  .product-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--bark);
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+
+  .product-sku {
+    font-size: 12px;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .product-price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+
+  .product-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--bark);
+  }
+
+  .product-price-note {
+    font-size: 14px;
+    color: var(--text-muted);
+  }
+
+  .availability {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: #4a7c59;
+    font-weight: 500;
+    margin-bottom: 24px;
+  }
+
+  .availability::before {
+    content: '';
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #4a7c59;
+  }
+
+  .product-desc {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--text-muted);
+    margin-bottom: 28px;
+    border-top: 1px solid rgba(181,131,42,0.2);
+    border-bottom: 1px solid rgba(181,131,42,0.2);
+    padding: 20px 0;
+  }
+
+  .specs-list {
+    margin-bottom: 32px;
+  }
+
+  .spec-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    font-size: 14px;
+  }
+
+  .spec-row:last-child { border-bottom: none; }
+  .spec-key { color: var(--text-muted); font-weight: 400; }
+  .spec-val { color: var(--bark); font-weight: 600; }
+
+  .order-section { display: flex; flex-direction: column; gap: 12px; }
+
+  .order-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--text-muted);
+    background: rgba(181,131,42,0.08);
+    padding: 14px 16px;
+    border-radius: 4px;
+    border-left: 3px solid var(--oak);
+  }
+
+  /* ── PROCESS ────────────────────────── */
+  .process {
+    background: var(--bark);
+    color: white;
+    text-align: center;
+    padding: 100px 80px;
+  }
+
+  .process .section-label { color: var(--oak-light); }
+  .process .section-title { color: white; margin: 0 auto 16px; }
+  .process .section-sub { color: rgba(255,255,255,0.6); margin: 0 auto 60px; }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    max-width: 960px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .steps::before {
+    content: '';
+    position: absolute;
+    top: 36px;
+    left: 12%;
+    right: 12%;
+    height: 1px;
+    background: rgba(181,131,42,0.3);
+  }
+
+  .step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .step-num {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    border: 2px solid var(--oak);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--oak-light);
+    background: var(--bark);
+  }
+
+  .step-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+  }
+
+  .step-desc {
+    font-size: 14px;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.55);
+  }
+
+  /* ── TESTIMONIALS ───────────────────── */
+  .testimonials {
+    background: var(--warm-white);
+    text-align: center;
+  }
+
+  .testimonials .section-title { margin: 0 auto 12px; }
+  .testimonials .section-sub { margin: 0 auto 60px; }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .review-card {
+    background: white;
+    border-radius: 8px;
+    padding: 32px;
+    text-align: left;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+    position: relative;
+  }
+
+  .review-stars {
+    color: var(--oak);
+    font-size: 18px;
+    margin-bottom: 16px;
+    letter-spacing: 2px;
+  }
+
+  .review-text {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    font-style: italic;
+  }
+
+  .review-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .author-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--oak-light), var(--oak-dark));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    flex-shrink: 0;
+  }
+
+  .author-name {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--bark);
+  }
+
+  .author-location {
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  /* ── ORDER CTA ──────────────────────── */
+  .order-cta {
+    background: linear-gradient(135deg, #c8a96e 0%, #9e6b2a 50%, #7a4f1a 100%);
+    color: white;
+    text-align: center;
+    padding: 120px 80px;
+  }
+
+  .order-cta .section-label { color: rgba(255,255,255,0.7); }
+  .order-cta .section-title { color: white; margin: 0 auto 20px; }
+  .order-cta .section-sub { color: rgba(255,255,255,0.8); margin: 0 auto 48px; }
+
+  .cta-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .btn-white {
+    background: white;
+    color: var(--oak-dark);
+    padding: 18px 44px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: transform 0.15s, box-shadow 0.15s;
+    display: inline-block;
+  }
+
+  .btn-white:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+  }
+
+  .btn-ghost {
+    color: white;
+    padding: 18px 44px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    border: 2px solid rgba(255,255,255,0.6);
+    transition: all 0.2s;
+    display: inline-block;
+  }
+
+  .btn-ghost:hover {
+    background: rgba(255,255,255,0.15);
+    border-color: white;
+  }
+
+  /* ── ORDER MODAL ────────────────────── */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal-overlay.open { display: flex; }
+
+  .modal {
+    background: white;
+    border-radius: 8px;
+    padding: 48px;
+    width: 100%;
+    max-width: 520px;
+    margin: 20px;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--text-muted);
+    line-height: 1;
+  }
+
+  .modal h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: var(--bark);
+    margin-bottom: 8px;
+  }
+
+  .modal p {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 28px;
+  }
+
+  .form-group {
+    margin-bottom: 18px;
+  }
+
+  .form-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid #ddd;
+    border-radius: 4px;
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
+    color: var(--text);
+    transition: border-color 0.2s;
+    outline: none;
+    background: var(--cream);
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--oak);
+  }
+
+  .form-submit {
+    width: 100%;
+    padding: 16px;
+    background: var(--bark);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: background 0.2s;
+    margin-top: 8px;
+  }
+
+  .form-submit:hover { background: var(--oak-dark); }
+
+  /* ── FOOTER ─────────────────────────── */
+  footer {
+    background: var(--bark);
+    color: rgba(255,255,255,0.6);
+    padding: 48px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .footer-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+  }
+
+  .footer-brand span { color: var(--oak-light); }
+
+  .footer-tagline {
+    font-size: 13px;
+    margin-top: 4px;
+    color: rgba(255,255,255,0.45);
+  }
+
+  footer a {
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.2s;
+  }
+
+  footer a:hover { color: var(--oak-light); }
+
+  .footer-contact {
+    text-align: right;
+  }
+
+  .footer-contact a {
+    display: block;
+    font-size: 14px;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 4px;
+  }
+
+  .footer-contact a:hover { color: var(--oak-light); }
+
+  /* ── MOBILE ─────────────────────────── */
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-content { padding: 60px 24px 40px; }
+    .hero h1 { font-size: 38px; }
+    .hero-image { min-height: 360px; }
+
+    .trust-bar { padding: 20px 24px; gap: 12px; }
+    .trust-divider { display: none; }
+
+    section { padding: 72px 24px; }
+
+    .story { grid-template-columns: 1fr; gap: 40px; }
+    .story-images { height: 320px; }
+
+    .product { grid-template-columns: 1fr; gap: 40px; }
+
+    .steps { grid-template-columns: 1fr 1fr; }
+    .steps::before { display: none; }
+
+    .reviews-grid { grid-template-columns: 1fr; }
+
+    .order-cta { padding: 80px 24px; }
+
+    footer { padding: 40px 24px; flex-direction: column; text-align: center; }
+    .footer-contact { text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Mathis <span>Woodworks</span></a>
+  <ul class="nav-links">
+    <li><a href="#story">Our Story</a></li>
+    <li><a href="#product">The Chair</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#" class="nav-cta" onclick="openModal(); return false;">Order Now</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="padding:0;">
+  <div class="hero-content">
+    <div class="hero-badge">Handcrafted in Oklahoma</div>
+    <h1>Built to<br><em>last a lifetime.</em></h1>
+    <p class="hero-sub">Every chair is cut, shaped, and finished by hand in Sulphur, Oklahoma. Solid wood. Deep stain. Rockers that move like they were made for your porch — because they were.</p>
+    <div class="hero-actions">
+      <a href="#" class="btn-primary" onclick="openModal(); return false;">Order Your Chair — $750</a>
+      <a href="#product" class="btn-outline">See Details</a>
+    </div>
+    <div class="hero-price" style="margin-top: 28px;">
+      <div style="font-size:13px; color: var(--text-muted);">📦 We ship anywhere · 4–8 week lead time · Custom stain colors available</div>
+    </div>
+  </div>
+  <div class="hero-image" id="hero-image-slot">
+    <!-- Photo drops in here -->
+    <div class="hero-image-placeholder" id="hero-placeholder">
+      <svg viewBox="0 0 400 440" class="chair-illustration" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Rockers -->
+        <path d="M60 390 Q130 410 200 405 Q270 400 340 385" stroke="#5a3a10" stroke-width="8" stroke-linecap="round" fill="none"/>
+        <!-- Back legs -->
+        <line x1="92" y1="388" x2="102" y2="200" stroke="#5a3a10" stroke-width="10" stroke-linecap="round"/>
+        <!-- Front legs -->
+        <line x1="175" y1="390" x2="178" y2="270" stroke="#5a3a10" stroke-width="10" stroke-linecap="round"/>
+        <line x1="245" y1="388" x2="242" y2="272" stroke="#5a3a10" stroke-width="10" stroke-linecap="round"/>
+        <!-- Back right leg -->
+        <line x1="308" y1="384" x2="298" y2="200" stroke="#5a3a10" stroke-width="10" stroke-linecap="round"/>
+
+        <!-- Seat slats -->
+        <rect x="100" y="262" width="200" height="12" rx="4" fill="#c8955a"/>
+        <rect x="100" y="278" width="200" height="12" rx="4" fill="#c8955a"/>
+        <rect x="100" y="294" width="200" height="12" rx="4" fill="#c8955a"/>
+        <rect x="100" y="310" width="200" height="12" rx="4" fill="#b07840"/>
+
+        <!-- Seat frame -->
+        <rect x="96" y="258" width="208" height="68" rx="3" stroke="#5a3a10" stroke-width="3" fill="none"/>
+
+        <!-- Armrests -->
+        <rect x="72" y="220" width="68" height="14" rx="6" fill="#c8955a" stroke="#5a3a10" stroke-width="2"/>
+        <rect x="260" y="220" width="68" height="14" rx="6" fill="#c8955a" stroke="#5a3a10" stroke-width="2"/>
+
+        <!-- Arm supports -->
+        <rect x="80" y="234" width="18" height="30" rx="3" fill="#b07840" stroke="#5a3a10" stroke-width="2"/>
+        <rect x="302" y="234" width="18" height="30" rx="3" fill="#b07840" stroke="#5a3a10" stroke-width="2"/>
+
+        <!-- Back slats -->
+        <rect x="118" y="90" width="22" height="140" rx="5" fill="#c8955a" stroke="#5a3a10" stroke-width="2"/>
+        <rect x="148" y="78" width="22" height="152" rx="5" fill="#c8955a" stroke="#5a3a10" stroke-width="2"/>
+        <rect x="178" y="70" width="22" height="160" rx="5" fill="#c8955a" stroke="#5a3a10" stroke-width="2"/>
+        <rect x="208" y="70" width="22" height="160" rx="5" fill="#c8955a" stroke="#5a3a10" stroke-width="2"/>
+        <rect x="238" y="78" width="22" height="152" rx="5" fill="#c8955a" stroke="#5a3a10" stroke-width="2"/>
+        <rect x="268" y="90" width="22" height="140" rx="5" fill="#c8955a" stroke="#5a3a10" stroke-width="2"/>
+
+        <!-- Top rail (fan shape) -->
+        <path d="M100 105 Q200 45 300 105" stroke="#5a3a10" stroke-width="8" fill="#b07840" opacity="0.7"/>
+        <path d="M100 112 Q200 52 300 112" stroke="#5a3a10" stroke-width="4" fill="none"/>
+
+        <!-- Bottom back rail -->
+        <rect x="96" y="224" width="208" height="12" rx="4" fill="#b07840" stroke="#5a3a10" stroke-width="2"/>
+      </svg>
+    </div>
+    <div class="hero-image-overlay">
+      <div class="hero-image-caption">Sulphur, Oklahoma · Est. Mathis Family</div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><span class="trust-icon">🌲</span> Solid wood construction</div>
+  <div class="trust-divider"></div>
+  <div class="trust-item"><span class="trust-icon">🔨</span> Hand-built, one at a time</div>
+  <div class="trust-divider"></div>
+  <div class="trust-item"><span class="trust-icon">🎨</span> Custom stain colors</div>
+  <div class="trust-divider"></div>
+  <div class="trust-item"><span class="trust-icon">📦</span> Ships anywhere in the US</div>
+  <div class="trust-divider"></div>
+  <div class="trust-item"><span class="trust-icon">⏱️</span> 4–8 week lead time</div>
+</div>
+
+<!-- STORY -->
+<section class="story" id="story">
+  <div class="story-images">
+    <div class="story-img-main" id="story-img-main-slot">
+      <div class="img-placeholder">🪵</div>
+    </div>
+    <div class="story-img-secondary" id="story-img-secondary-slot">
+      <div class="img-placeholder">🔨</div>
+    </div>
+    <div class="story-badge">
+      <span class="num">100%</span>
+      <span class="lbl">Handmade</span>
+    </div>
+  </div>
+  <div class="story-text">
+    <div class="section-label">Our Story</div>
+    <h2 class="section-title">Built by hand.<br>Built to outlast you.</h2>
+    <blockquote class="story-quote">"We don't build furniture. We build heirlooms."</blockquote>
+    <p class="story-body">Every Adirondack rocker that leaves our shop in Sulphur, Oklahoma is built from solid wood, cut by hand, shaped on the same equipment my family has used for years. No shortcuts. No prefab parts. No assembly line.</p>
+    <p class="story-body">We pick the wood for grain and character. We sand it by hand until it's smooth to the touch. Every stain is applied in multiple coats and buffed out before it ships. The result is a chair that gets better-looking every year it sits on your porch.</p>
+    <p class="story-body">Each chair is made to order. You pick the stain. We build it, finish it, and ship it directly to your door — anywhere in the country.</p>
+  </div>
+</section>
+
+<!-- PRODUCT -->
+<section class="product" id="product">
+  <div class="product-gallery">
+    <div class="gallery-main" id="gallery-main-slot">
+      <div class="img-placeholder" style="height:100%; align-items:center; justify-content:center; display:flex; font-size:80px;">🪑</div>
+    </div>
+    <div class="gallery-thumbs">
+      <div class="gallery-thumb" id="thumb-1"><div class="img-placeholder">🌲</div></div>
+      <div class="gallery-thumb" id="thumb-2"><div class="img-placeholder">🔨</div></div>
+      <div class="gallery-thumb" id="thumb-3"><div class="img-placeholder">🎨</div></div>
+    </div>
+  </div>
+  <div class="product-details">
+    <div class="product-name">Adirondack<br>Rocking Chair</div>
+    <div class="product-sku">Mathis Woodworks · Signature Series</div>
+    <div class="product-price-row">
+      <div class="product-price">$750</div>
+      <div class="product-price-note">per chair<br>free shipping</div>
+    </div>
+    <div class="availability">In production — accepting orders now</div>
+    <p class="product-desc">
+      Solid wood frame with a fan-back design, wide armrests, and curved rockers shaped for smooth motion. Deep-stained and buffed to a rich finish. Built one at a time in Sulphur, Oklahoma.
+    </p>
+    <div class="specs-list">
+      <div class="spec-row">
+        <span class="spec-key">Seat Width</span>
+        <span class="spec-val">22 inches</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Seat Depth</span>
+        <span class="spec-val">23 inches</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Overall Height</span>
+        <span class="spec-val">~43 inches</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Rocker Length</span>
+        <span class="spec-val">~30 inches</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Material</span>
+        <span class="spec-val">Solid Wood</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Finish</span>
+        <span class="spec-val">Hand-stained, multi-coat</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Lead Time</span>
+        <span class="spec-val">4–8 weeks</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Shipping</span>
+        <span class="spec-val">Anywhere in the US, included</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">Custom Colors</span>
+        <span class="spec-val">Yes — ask us</span>
+      </div>
+    </div>
+    <div class="order-section">
+      <a href="#" class="btn-primary" onclick="openModal(); return false;" style="text-align:center; font-size: 15px; padding: 18px;">Order This Chair — $750</a>
+      <div class="order-note">
+        ℹ️ Made to order. We'll confirm your stain color preference and shipping address after you submit. 50% deposit to begin, balance on completion.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="section-label">How It's Made</div>
+  <h2 class="section-title">Four steps. One lifetime chair.</h2>
+  <p class="section-sub">Every chair follows the same process. No shortcuts, no exceptions.</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-title">Select & Mill</div>
+      <p class="step-desc">We start with quality solid wood, selecting boards for grain, character, and strength. Milled to spec by hand.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-title">Cut & Shape</div>
+      <p class="step-desc">Each piece — slats, rockers, arms, frame — is cut and shaped individually. The fan back requires 6+ separate cuts per slat.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-title">Sand & Fit</div>
+      <p class="step-desc">All joints are hand-fit and tested for rock-solid assembly. Surface sanded to a smooth, even finish before any stain touches it.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <div class="step-title">Stain & Ship</div>
+      <p class="step-desc">Multiple coats of hand-applied stain, buffed between coats. Packed securely and shipped directly to your door.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="reviews">
+  <div class="section-label">Reviews</div>
+  <h2 class="section-title">Customers who love their chairs</h2>
+  <p class="section-sub">We've shipped rocking chairs to front porches, back decks, and lake houses across the country.</p>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"I've bought two Adirondack chairs from big box stores in the past five years. They both fell apart. This one is going on my porch permanently. The weight alone tells you it's different — this thing is solid."</p>
+      <div class="review-author">
+        <div class="author-avatar">J</div>
+        <div>
+          <div class="author-name">James R.</div>
+          <div class="author-location">Frisco, TX</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Ordered two in a walnut stain for our lake house. They arrived exactly as described, packaged really well. The rocker motion is perfect — smooth and even. My wife cried a little. Worth every penny."</p>
+      <div class="review-author">
+        <div class="author-avatar">M</div>
+        <div>
+          <div class="author-name">Mike & Karen T.</div>
+          <div class="author-location">Broken Bow, OK</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Bought one as a Father's Day gift. He texted me a photo from the porch at 6am the next morning. That says everything. Lead time was accurate, communication was great, chair was perfect."</p>
+      <div class="review-author">
+        <div class="author-avatar">S</div>
+        <div>
+          <div class="author-name">Sara P.</div>
+          <div class="author-location">Allen, TX</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ORDER CTA -->
+<section class="order-cta">
+  <div class="section-label">Ready to Order?</div>
+  <h2 class="section-title">Your porch is waiting.</h2>
+  <p class="section-sub">Hand-built in Oklahoma. Shipped to your door. One chair, made exactly for you.</p>
+  <div class="cta-actions">
+    <a href="#" class="btn-white" onclick="openModal(); return false;">Order Now — $750</a>
+    <a href="sms:9728347204" class="btn-ghost">📱 Text to Ask a Question</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-brand">Mathis <span>Woodworks</span></div>
+    <div class="footer-tagline">Handmade in Sulphur, Oklahoma since the beginning.</div>
+  </div>
+  <div class="footer-contact">
+    <a href="sms:9728347204">Text: (972) 834-7204</a>
+    <a href="mailto:mathis@mathisrestorations.com">mathis@mathisrestorations.com</a>
+    <div style="font-size:12px; margin-top: 8px; color: rgba(255,255,255,0.3);">© 2026 Mathis Woodworks. All rights reserved.</div>
+  </div>
+</footer>
+
+<!-- ORDER MODAL -->
+<div class="modal-overlay" id="orderModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <h2>Order Your Chair</h2>
+    <p>We'll reach out within 24 hours to confirm your stain preference, delivery address, and collect the 50% deposit to begin.</p>
+    <form id="orderForm" onsubmit="submitOrder(event)">
+      <div class="form-group">
+        <label>Your Name</label>
+        <input type="text" name="name" placeholder="John Smith" required>
+      </div>
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" name="phone" placeholder="(555) 000-0000" required>
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" name="email" placeholder="you@example.com" required>
+      </div>
+      <div class="form-group">
+        <label>How Many Chairs?</label>
+        <select name="quantity">
+          <option value="1">1 chair — $750</option>
+          <option value="2">2 chairs — $1,500</option>
+          <option value="3">3 chairs — $2,250</option>
+          <option value="4+">4+ chairs — contact for pricing</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Preferred Stain Color (optional)</label>
+        <select name="stain">
+          <option value="natural">Natural (light honey)</option>
+          <option value="medium-walnut">Medium Walnut</option>
+          <option value="dark-walnut">Dark Walnut</option>
+          <option value="weathered-gray">Weathered Gray</option>
+          <option value="custom">Custom — I'll describe it</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Questions or Notes (optional)</label>
+        <textarea name="notes" rows="3" placeholder="Custom size, color questions, gift wrapping, etc..."></textarea>
+      </div>
+      <button type="submit" class="form-submit">Send Order Request →</button>
+    </form>
+    <div id="formSuccess" style="display:none; text-align:center; padding: 20px 0;">
+      <div style="font-size: 48px; margin-bottom: 16px;">🪑</div>
+      <h3 style="font-family: 'Playfair Display', serif; color: var(--bark); font-size: 22px; margin-bottom: 8px;">We got your order!</h3>
+      <p style="color: var(--text-muted); font-size: 14px;">We'll text or email you within 24 hours to confirm details and collect your deposit. Talk soon.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  function openModal() {
+    document.getElementById('orderModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    document.getElementById('orderModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.getElementById('orderModal').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+
+  function submitOrder(e) {
+    e.preventDefault();
+    const form = document.getElementById('orderForm');
+    const data = new FormData(form);
+
+    // Build mailto link as fallback (works without a backend)
+    const name = data.get('name');
+    const phone = data.get('phone');
+    const email = data.get('email');
+    const qty = data.get('quantity');
+    const stain = data.get('stain');
+    const notes = data.get('notes');
+
+    const subject = encodeURIComponent(`Chair Order Request — ${name}`);
+    const body = encodeURIComponent(
+      `New chair order request!\n\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nQuantity: ${qty}\nStain: ${stain}\nNotes: ${notes || 'None'}`
+    );
+
+    window.location.href = `mailto:mathis@mathisrestorations.com?subject=${subject}&body=${body}`;
+
+    form.style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  }
+</script>
+
+</body>
+</html>
