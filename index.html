@@ -723,6 +723,59 @@
     color: var(--text-muted);
   }
 
+  /* ── FAQ ────────────────────────────── */
+  .faq-section {
+    background: var(--cream);
+    padding: 100px 80px;
+  }
+
+  .faq-section .section-title { margin-bottom: 52px; }
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    max-width: 1040px;
+    border-top: 1px solid rgba(181,131,42,0.2);
+  }
+
+  .faq-item {
+    padding: 28px 32px 28px 0;
+    border-bottom: 1px solid rgba(181,131,42,0.2);
+  }
+
+  .faq-item:nth-child(odd) {
+    padding-right: 60px;
+    border-right: 1px solid rgba(181,131,42,0.2);
+  }
+
+  .faq-item:nth-child(even) {
+    padding-left: 48px;
+    padding-right: 0;
+  }
+
+  .faq-q {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--bark);
+    margin-bottom: 10px;
+    line-height: 1.35;
+  }
+
+  .faq-a {
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--text-muted);
+  }
+
+  @media (max-width: 900px) {
+    .faq-section { padding: 72px 24px; }
+    .faq-grid { grid-template-columns: 1fr; }
+    .faq-item:nth-child(odd) { padding-right: 0; border-right: none; }
+    .faq-item:nth-child(even) { padding-left: 0; }
+  }
+
   /* ── ORDER CTA ──────────────────────── */
   .order-cta {
     background: linear-gradient(135deg, #c8a96e 0%, #9e6b2a 50%, #7a4f1a 100%);
@@ -971,7 +1024,7 @@
     <li><a href="#product">The Chair</a></li>
     <li><a href="#process">Process</a></li>
     <li><a href="#reviews">Reviews</a></li>
-    <li><a href="#" class="nav-cta" onclick="openModal(); return false;">Order Now</a></li>
+    <li><a href="https://buy.stripe.com/cNi7sE5zq6Yc7Pk4zNfrW03" class="nav-cta" target="_blank">Order Now</a></li>
   </ul>
 </nav>
 
@@ -982,7 +1035,7 @@
     <h1>Built to<br><em>last a lifetime.</em></h1>
     <p class="hero-sub">Every chair is cut, shaped, and finished by hand in Sulphur, Oklahoma. Solid wood. Deep stain. Rockers that move like they were made for your porch — because they were.</p>
     <div class="hero-actions">
-      <a href="#" class="btn-primary" onclick="openModal(); return false;">Order Your Chair — $750</a>
+      <a href="https://buy.stripe.com/cNi7sE5zq6Yc7Pk4zNfrW03" class="btn-primary" target="_blank">Order Your Chair — $750</a>
       <a href="#product" class="btn-outline">See Details</a>
     </div>
     <div class="hero-price" style="margin-top: 28px;">
@@ -1108,9 +1161,13 @@
       </div>
     </div>
     <div class="order-section">
-      <a href="#" class="btn-primary" onclick="openModal(); return false;" style="text-align:center; font-size: 15px; padding: 18px;">Order This Chair — $750</a>
+      <a href="https://buy.stripe.com/cNi7sE5zq6Yc7Pk4zNfrW03" class="btn-primary" target="_blank" style="text-align:center; font-size: 15px; padding: 18px;">Order Now — Secure Checkout $750</a>
+      <div style="text-align:center; font-size:12px; color:var(--text-muted); margin-top: 4px;">🔒 Powered by Stripe · Adjust quantity at checkout · Ships anywhere</div>
       <div class="order-note">
-        ℹ️ Made to order. We'll confirm your stain color preference and shipping address after you submit. 50% deposit to begin, balance on completion.
+        ℹ️ Made to order. You can pick your quantity at checkout (up to 10). We'll reach out within 24 hours to confirm stain color and shipping details.
+      </div>
+      <div style="margin-top:12px; text-align:center;">
+        <a href="#" onclick="openModal(); return false;" style="font-size:13px; color:var(--text-muted); text-decoration:underline;">Need a custom size or bulk pricing? Contact us →</a>
       </div>
     </div>
   </div>
@@ -1187,15 +1244,56 @@
   </div>
 </section>
 
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="section-label">Common Questions</div>
+  <h2 class="section-title">Everything you need to know</h2>
+  <div class="faq-grid">
+    <div class="faq-item">
+      <div class="faq-q">How long does it take to build a chair?</div>
+      <div class="faq-a">Every chair is built to order. Lead time is typically 4–8 weeks depending on current orders. We'll give you an exact timeline when you order.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What wood do you use?</div>
+      <div class="faq-a">We use quality solid wood selected for grain, strength, and character. Each board is hand-picked before it touches a saw.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I choose my own stain color?</div>
+      <div class="faq-a">Yes. After you order, we'll reach out to confirm your preference. We offer natural, medium walnut, dark walnut, weathered gray, and custom colors — just describe what you're going for.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Do you ship everywhere?</div>
+      <div class="faq-a">Anywhere in the continental US, shipping included in the $750 price. Alaska and Hawaii — contact us for a quote.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How does payment work?</div>
+      <div class="faq-a">We process payment securely through Stripe. Full payment is collected at checkout. We start building once payment clears. You'll receive a confirmation and we'll be in touch shortly after.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I order multiple chairs?</div>
+      <div class="faq-a">Yes — you can adjust quantity right on the checkout page (up to 10). For larger orders or commercial quantities, reach out directly and we'll work out pricing.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What if it arrives damaged?</div>
+      <div class="faq-a">We pack everything carefully, but if something arrives damaged in shipping, just send us a photo and we'll make it right. No hassle.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Are these built to last outdoors?</div>
+      <div class="faq-a">Yes. The hand-applied stain provides weather protection. We recommend bringing chairs in during extreme weather or re-applying an exterior finish every couple of years to keep them looking great for decades.</div>
+    </div>
+  </div>
+</section>
+
 <!-- ORDER CTA -->
 <section class="order-cta">
   <div class="section-label">Ready to Order?</div>
   <h2 class="section-title">Your porch is waiting.</h2>
   <p class="section-sub">Hand-built in Oklahoma. Shipped to your door. One chair, made exactly for you.</p>
   <div class="cta-actions">
-    <a href="#" class="btn-white" onclick="openModal(); return false;">Order Now — $750</a>
-    <a href="sms:9728347204" class="btn-ghost">📱 Text to Ask a Question</a>
+    <a href="https://buy.stripe.com/cNi7sE5zq6Yc7Pk4zNfrW03" class="btn-white" target="_blank">Order Now — $750 · Secure Checkout</a>
+    <a href="sms:9728347204" class="btn-ghost">📱 Text Us a Question</a>
   </div>
+  <p style="margin-top:20px; font-size:12px; color:rgba(255,255,255,0.45); letter-spacing:0.5px;">🔒 Secure payment via Stripe · Adjust quantity at checkout · Free US shipping</p>
 </section>
 
 <!-- FOOTER -->
@@ -1216,8 +1314,8 @@
 <div class="modal-overlay" id="orderModal">
   <div class="modal">
     <button class="modal-close" onclick="closeModal()">×</button>
-    <h2>Order Your Chair</h2>
-    <p>We'll reach out within 24 hours to confirm your stain preference, delivery address, and collect the 50% deposit to begin.</p>
+    <h2>Custom or Bulk Order</h2>
+    <p>Ordering 2+ chairs, need a custom size, or have a special request? Fill this out and we'll get back to you within 24 hours with a quote.</p>
     <form id="orderForm" onsubmit="submitOrder(event)">
       <div class="form-group">
         <label>Your Name</label>
